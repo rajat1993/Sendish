@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		71B48BD31A51AFC600A37FF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BD21A51AFC600A37FF7 /* main.m */; };
-		71B48BD61A51AFC600A37FF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BD51A51AFC600A37FF7 /* AppDelegate.m */; };
-		71B48BD91A51AFC600A37FF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BD81A51AFC600A37FF7 /* ViewController.m */; };
-		71B48BDC1A51AFC600A37FF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDA1A51AFC600A37FF7 /* Main.storyboard */; };
 		71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDD1A51AFC600A37FF7 /* Images.xcassets */; };
 		71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDF1A51AFC600A37FF7 /* LaunchScreen.xib */; };
 		71B48BED1A51AFC600A37FF7 /* SendishTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BEC1A51AFC600A37FF7 /* SendishTests.m */; };
+		71B48BF91A51B05300A37FF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BF81A51B05300A37FF7 /* AppDelegate.m */; };
+		71B48C021A51B2E300A37FF7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48C001A51B2E300A37FF7 /* RootViewController.m */; };
+		71B48C031A51B2E300A37FF7 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48C011A51B2E300A37FF7 /* RootViewController.xib */; };
+		71B48C081A51B77700A37FF7 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48C061A51B77700A37FF7 /* SignupViewController.m */; };
+		71B48C091A51B77700A37FF7 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48C071A51B77700A37FF7 /* SignupViewController.xib */; };
+		71B48C0E1A51B85300A37FF7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48C0C1A51B85300A37FF7 /* LoginViewController.m */; };
+		71B48C0F1A51B85300A37FF7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48C0D1A51B85300A37FF7 /* LoginViewController.xib */; };
+		71B48C141A51BADA00A37FF7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48C121A51BADA00A37FF7 /* MainViewController.m */; };
+		71B48C151A51BADA00A37FF7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48C131A51BADA00A37FF7 /* MainViewController.xib */; };
+		71B48C191A51BD0E00A37FF7 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48C181A51BD0E00A37FF7 /* NavigationView.m */; };
+		71B48C1B1A51BD2400A37FF7 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48C1A1A51BD2400A37FF7 /* NavigationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +38,28 @@
 		71B48BCD1A51AFC600A37FF7 /* Sendish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sendish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B48BD11A51AFC600A37FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71B48BD21A51AFC600A37FF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		71B48BD41A51AFC600A37FF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		71B48BD51A51AFC600A37FF7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		71B48BD71A51AFC600A37FF7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		71B48BD81A51AFC600A37FF7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		71B48BDB1A51AFC600A37FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71B48BDD1A51AFC600A37FF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		71B48BE01A51AFC600A37FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		71B48BE61A51AFC600A37FF7 /* SendishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SendishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B48BEB1A51AFC600A37FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71B48BEC1A51AFC600A37FF7 /* SendishTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendishTests.m; sourceTree = "<group>"; };
+		71B48BF71A51B05300A37FF7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		71B48BF81A51B05300A37FF7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		71B48BFF1A51B2E300A37FF7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		71B48C001A51B2E300A37FF7 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		71B48C011A51B2E300A37FF7 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		71B48C051A51B77700A37FF7 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		71B48C061A51B77700A37FF7 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		71B48C071A51B77700A37FF7 /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		71B48C0B1A51B85300A37FF7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		71B48C0C1A51B85300A37FF7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		71B48C0D1A51B85300A37FF7 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		71B48C111A51BADA00A37FF7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		71B48C121A51BADA00A37FF7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		71B48C131A51BADA00A37FF7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		71B48C171A51BD0E00A37FF7 /* NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationView.h; sourceTree = "<group>"; };
+		71B48C181A51BD0E00A37FF7 /* NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
+		71B48C1A1A51BD2400A37FF7 /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +101,8 @@
 		71B48BCF1A51AFC600A37FF7 /* Sendish */ = {
 			isa = PBXGroup;
 			children = (
-				71B48BD41A51AFC600A37FF7 /* AppDelegate.h */,
-				71B48BD51A51AFC600A37FF7 /* AppDelegate.m */,
-				71B48BD71A51AFC600A37FF7 /* ViewController.h */,
-				71B48BD81A51AFC600A37FF7 /* ViewController.m */,
-				71B48BDA1A51AFC600A37FF7 /* Main.storyboard */,
+				71B48BFA1A51B16900A37FF7 /* MVC */,
+				71B48BF61A51B04200A37FF7 /* App Delegate */,
 				71B48BDD1A51AFC600A37FF7 /* Images.xcassets */,
 				71B48BDF1A51AFC600A37FF7 /* LaunchScreen.xib */,
 				71B48BD01A51AFC600A37FF7 /* Supporting Files */,
@@ -117,6 +134,101 @@
 				71B48BEB1A51AFC600A37FF7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71B48BF61A51B04200A37FF7 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				71B48BF71A51B05300A37FF7 /* AppDelegate.h */,
+				71B48BF81A51B05300A37FF7 /* AppDelegate.m */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		71B48BFA1A51B16900A37FF7 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				71B48BFB1A51B18C00A37FF7 /* Modals */,
+				71B48BFC1A51B19500A37FF7 /* Views */,
+				71B48BFD1A51B1A100A37FF7 /* Controllers */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		71B48BFB1A51B18C00A37FF7 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		71B48BFC1A51B19500A37FF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				71B48C161A51BB1100A37FF7 /* Navigation View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71B48BFD1A51B1A100A37FF7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				71B48C101A51BA9C00A37FF7 /* Main Controller */,
+				71B48C0A1A51B7A700A37FF7 /* Login Controller */,
+				71B48C041A51B6FB00A37FF7 /* Signup Controller */,
+				71B48BFE1A51B2CF00A37FF7 /* Root Controller */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		71B48BFE1A51B2CF00A37FF7 /* Root Controller */ = {
+			isa = PBXGroup;
+			children = (
+				71B48BFF1A51B2E300A37FF7 /* RootViewController.h */,
+				71B48C001A51B2E300A37FF7 /* RootViewController.m */,
+				71B48C011A51B2E300A37FF7 /* RootViewController.xib */,
+			);
+			path = "Root Controller";
+			sourceTree = "<group>";
+		};
+		71B48C041A51B6FB00A37FF7 /* Signup Controller */ = {
+			isa = PBXGroup;
+			children = (
+				71B48C051A51B77700A37FF7 /* SignupViewController.h */,
+				71B48C061A51B77700A37FF7 /* SignupViewController.m */,
+				71B48C071A51B77700A37FF7 /* SignupViewController.xib */,
+			);
+			path = "Signup Controller";
+			sourceTree = "<group>";
+		};
+		71B48C0A1A51B7A700A37FF7 /* Login Controller */ = {
+			isa = PBXGroup;
+			children = (
+				71B48C0B1A51B85300A37FF7 /* LoginViewController.h */,
+				71B48C0C1A51B85300A37FF7 /* LoginViewController.m */,
+				71B48C0D1A51B85300A37FF7 /* LoginViewController.xib */,
+			);
+			path = "Login Controller";
+			sourceTree = "<group>";
+		};
+		71B48C101A51BA9C00A37FF7 /* Main Controller */ = {
+			isa = PBXGroup;
+			children = (
+				71B48C111A51BADA00A37FF7 /* MainViewController.h */,
+				71B48C121A51BADA00A37FF7 /* MainViewController.m */,
+				71B48C131A51BADA00A37FF7 /* MainViewController.xib */,
+			);
+			path = "Main Controller";
+			sourceTree = "<group>";
+		};
+		71B48C161A51BB1100A37FF7 /* Navigation View */ = {
+			isa = PBXGroup;
+			children = (
+				71B48C171A51BD0E00A37FF7 /* NavigationView.h */,
+				71B48C181A51BD0E00A37FF7 /* NavigationView.m */,
+				71B48C1A1A51BD2400A37FF7 /* NavigationView.xib */,
+			);
+			path = "Navigation View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +311,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71B48BDC1A51AFC600A37FF7 /* Main.storyboard in Resources */,
+				71B48C0F1A51B85300A37FF7 /* LoginViewController.xib in Resources */,
+				71B48C151A51BADA00A37FF7 /* MainViewController.xib in Resources */,
 				71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */,
 				71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */,
+				71B48C091A51B77700A37FF7 /* SignupViewController.xib in Resources */,
+				71B48C031A51B2E300A37FF7 /* RootViewController.xib in Resources */,
+				71B48C1B1A51BD2400A37FF7 /* NavigationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +335,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71B48BD91A51AFC600A37FF7 /* ViewController.m in Sources */,
-				71B48BD61A51AFC600A37FF7 /* AppDelegate.m in Sources */,
+				71B48BF91A51B05300A37FF7 /* AppDelegate.m in Sources */,
+				71B48C191A51BD0E00A37FF7 /* NavigationView.m in Sources */,
+				71B48C141A51BADA00A37FF7 /* MainViewController.m in Sources */,
 				71B48BD31A51AFC600A37FF7 /* main.m in Sources */,
+				71B48C081A51B77700A37FF7 /* SignupViewController.m in Sources */,
+				71B48C021A51B2E300A37FF7 /* RootViewController.m in Sources */,
+				71B48C0E1A51B85300A37FF7 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +364,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		71B48BDA1A51AFC600A37FF7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				71B48BDB1A51AFC600A37FF7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		71B48BDF1A51AFC600A37FF7 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -346,8 +458,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sendish/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -356,8 +470,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sendish/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

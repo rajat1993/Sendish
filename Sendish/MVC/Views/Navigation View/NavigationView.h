@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NavigationView.h
 //  Sendish
 //
 //  Created by Rajat Sharma on 29/12/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface NavigationView : UIView
 
 @end
-
