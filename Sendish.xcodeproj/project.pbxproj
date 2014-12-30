@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7126FFC91A52FE2F0004EADF /* ReceivedSendishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126FFC71A52FE2F0004EADF /* ReceivedSendishViewController.m */; };
+		7126FFCA1A52FE2F0004EADF /* ReceivedSendishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7126FFC81A52FE2F0004EADF /* ReceivedSendishViewController.xib */; };
+		7126FFCF1A52FE530004EADF /* SentSendishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126FFCD1A52FE530004EADF /* SentSendishViewController.m */; };
+		7126FFD01A52FE530004EADF /* SentSendishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7126FFCE1A52FE530004EADF /* SentSendishViewController.xib */; };
+		7126FFD51A5303970004EADF /* TakeSendishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126FFD31A5303970004EADF /* TakeSendishViewController.m */; };
+		7126FFD61A5303970004EADF /* TakeSendishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7126FFD41A5303970004EADF /* TakeSendishViewController.xib */; };
+		7126FFD81A5308A30004EADF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFD71A5308A30004EADF /* CoreVideo.framework */; };
+		7126FFDA1A5308AC0004EADF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFD91A5308AC0004EADF /* CoreMedia.framework */; };
+		7126FFDC1A5308B30004EADF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFDB1A5308B30004EADF /* AVFoundation.framework */; };
+		7126FFDE1A5308BB0004EADF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFDD1A5308BB0004EADF /* ImageIO.framework */; };
+		7126FFE01A5308C10004EADF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFDF1A5308C10004EADF /* QuartzCore.framework */; };
+		7126FFE91A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126FFE81A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
+		7126FFEB1A53184C0004EADF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFEA1A53184C0004EADF /* AssetsLibrary.framework */; };
 		71B48BD31A51AFC600A37FF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BD21A51AFC600A37FF7 /* main.m */; };
 		71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDD1A51AFC600A37FF7 /* Images.xcassets */; };
 		71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDF1A51AFC600A37FF7 /* LaunchScreen.xib */; };
@@ -35,6 +48,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7126FFC61A52FE2F0004EADF /* ReceivedSendishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedSendishViewController.h; sourceTree = "<group>"; };
+		7126FFC71A52FE2F0004EADF /* ReceivedSendishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedSendishViewController.m; sourceTree = "<group>"; };
+		7126FFC81A52FE2F0004EADF /* ReceivedSendishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceivedSendishViewController.xib; sourceTree = "<group>"; };
+		7126FFCC1A52FE530004EADF /* SentSendishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentSendishViewController.h; sourceTree = "<group>"; };
+		7126FFCD1A52FE530004EADF /* SentSendishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentSendishViewController.m; sourceTree = "<group>"; };
+		7126FFCE1A52FE530004EADF /* SentSendishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SentSendishViewController.xib; sourceTree = "<group>"; };
+		7126FFD21A5303970004EADF /* TakeSendishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeSendishViewController.h; sourceTree = "<group>"; };
+		7126FFD31A5303970004EADF /* TakeSendishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeSendishViewController.m; sourceTree = "<group>"; };
+		7126FFD41A5303970004EADF /* TakeSendishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeSendishViewController.xib; sourceTree = "<group>"; };
+		7126FFD71A5308A30004EADF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		7126FFD91A5308AC0004EADF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		7126FFDB1A5308B30004EADF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7126FFDD1A5308BB0004EADF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		7126FFDF1A5308C10004EADF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7126FFE71A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
+		7126FFE81A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
+		7126FFEA1A53184C0004EADF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		71B48BCD1A51AFC600A37FF7 /* Sendish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sendish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B48BD11A51AFC600A37FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71B48BD21A51AFC600A37FF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -67,6 +97,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7126FFEB1A53184C0004EADF /* AssetsLibrary.framework in Frameworks */,
+				7126FFE01A5308C10004EADF /* QuartzCore.framework in Frameworks */,
+				7126FFDE1A5308BB0004EADF /* ImageIO.framework in Frameworks */,
+				7126FFDC1A5308B30004EADF /* AVFoundation.framework in Frameworks */,
+				7126FFDA1A5308AC0004EADF /* CoreMedia.framework in Frameworks */,
+				7126FFD81A5308A30004EADF /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,9 +116,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7126FFC51A52FCDE0004EADF /* Received Sendish Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7126FFC61A52FE2F0004EADF /* ReceivedSendishViewController.h */,
+				7126FFC71A52FE2F0004EADF /* ReceivedSendishViewController.m */,
+				7126FFC81A52FE2F0004EADF /* ReceivedSendishViewController.xib */,
+			);
+			path = "Received Sendish Controller";
+			sourceTree = "<group>";
+		};
+		7126FFCB1A52FE470004EADF /* Sent Sendish Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7126FFCC1A52FE530004EADF /* SentSendishViewController.h */,
+				7126FFCD1A52FE530004EADF /* SentSendishViewController.m */,
+				7126FFCE1A52FE530004EADF /* SentSendishViewController.xib */,
+			);
+			path = "Sent Sendish Controller";
+			sourceTree = "<group>";
+		};
+		7126FFD11A5303850004EADF /* Take Sendish Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7126FFD21A5303970004EADF /* TakeSendishViewController.h */,
+				7126FFD31A5303970004EADF /* TakeSendishViewController.m */,
+				7126FFD41A5303970004EADF /* TakeSendishViewController.xib */,
+			);
+			path = "Take Sendish Controller";
+			sourceTree = "<group>";
+		};
+		7126FFE11A5315FF0004EADF /* Third Library */ = {
+			isa = PBXGroup;
+			children = (
+				7126FFE61A53161B0004EADF /* ALAssetsLibrary_CustomPhotoAlbum */,
+			);
+			path = "Third Library";
+			sourceTree = "<group>";
+		};
+		7126FFE61A53161B0004EADF /* ALAssetsLibrary_CustomPhotoAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				7126FFE71A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.h */,
+				7126FFE81A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m */,
+			);
+			path = ALAssetsLibrary_CustomPhotoAlbum;
+			sourceTree = "<group>";
+		};
 		71B48BC41A51AFC500A37FF7 = {
 			isa = PBXGroup;
 			children = (
+				7126FFEA1A53184C0004EADF /* AssetsLibrary.framework */,
+				7126FFDF1A5308C10004EADF /* QuartzCore.framework */,
+				7126FFDD1A5308BB0004EADF /* ImageIO.framework */,
+				7126FFDB1A5308B30004EADF /* AVFoundation.framework */,
+				7126FFD91A5308AC0004EADF /* CoreMedia.framework */,
+				7126FFD71A5308A30004EADF /* CoreVideo.framework */,
 				71B48BCF1A51AFC600A37FF7 /* Sendish */,
 				71B48BE91A51AFC600A37FF7 /* SendishTests */,
 				71B48BCE1A51AFC600A37FF7 /* Products */,
@@ -101,6 +190,7 @@
 		71B48BCF1A51AFC600A37FF7 /* Sendish */ = {
 			isa = PBXGroup;
 			children = (
+				7126FFE11A5315FF0004EADF /* Third Library */,
 				71B48BFA1A51B16900A37FF7 /* MVC */,
 				71B48BF61A51B04200A37FF7 /* App Delegate */,
 				71B48BDD1A51AFC600A37FF7 /* Images.xcassets */,
@@ -173,6 +263,9 @@
 		71B48BFD1A51B1A100A37FF7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7126FFD11A5303850004EADF /* Take Sendish Controller */,
+				7126FFCB1A52FE470004EADF /* Sent Sendish Controller */,
+				7126FFC51A52FCDE0004EADF /* Received Sendish Controller */,
 				71B48C101A51BA9C00A37FF7 /* Main Controller */,
 				71B48C0A1A51B7A700A37FF7 /* Login Controller */,
 				71B48C041A51B6FB00A37FF7 /* Signup Controller */,
@@ -313,11 +406,14 @@
 			files = (
 				71B48C0F1A51B85300A37FF7 /* LoginViewController.xib in Resources */,
 				71B48C151A51BADA00A37FF7 /* MainViewController.xib in Resources */,
+				7126FFCA1A52FE2F0004EADF /* ReceivedSendishViewController.xib in Resources */,
 				71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */,
 				71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */,
 				71B48C091A51B77700A37FF7 /* SignupViewController.xib in Resources */,
 				71B48C031A51B2E300A37FF7 /* RootViewController.xib in Resources */,
 				71B48C1B1A51BD2400A37FF7 /* NavigationView.xib in Resources */,
+				7126FFD61A5303970004EADF /* TakeSendishViewController.xib in Resources */,
+				7126FFD01A52FE530004EADF /* SentSendishViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,11 +432,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				71B48BF91A51B05300A37FF7 /* AppDelegate.m in Sources */,
+				7126FFCF1A52FE530004EADF /* SentSendishViewController.m in Sources */,
+				7126FFE91A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				71B48C191A51BD0E00A37FF7 /* NavigationView.m in Sources */,
 				71B48C141A51BADA00A37FF7 /* MainViewController.m in Sources */,
 				71B48BD31A51AFC600A37FF7 /* main.m in Sources */,
 				71B48C081A51B77700A37FF7 /* SignupViewController.m in Sources */,
 				71B48C021A51B2E300A37FF7 /* RootViewController.m in Sources */,
+				7126FFC91A52FE2F0004EADF /* ReceivedSendishViewController.m in Sources */,
+				7126FFD51A5303970004EADF /* TakeSendishViewController.m in Sources */,
 				71B48C0E1A51B85300A37FF7 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +630,7 @@
 				71B48BF21A51AFC600A37FF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71B48BF31A51AFC600A37FF7 /* Build configuration list for PBXNativeTarget "SendishTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +639,7 @@
 				71B48BF51A51AFC600A37FF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

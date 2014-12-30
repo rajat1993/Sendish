@@ -34,6 +34,7 @@
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
     
+    [self setupPages];
     [self setupView];
 }
 
@@ -60,7 +61,9 @@
     self.navViewObj = [[NavigationView alloc] initWithFrame:self.navigationView.frame];
     
     self.pageViewCtrlr = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
+    self.pageViewCtrlr.dataSource = self;
+    self.pageViewCtrlr.delegate = self;
+
     [self.pageViewCtrlr.view setFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-64)];
     
     [self addChildViewController:self.pageViewCtrlr];
@@ -69,7 +72,51 @@
     [self.navigationView addSubview:self.navViewObj];
 }
 
+-(void)setupPages
+{
+    self.receivedCtrlr = [[ReceivedSendishViewController alloc] initWithNibName:@"ReceivedSendishViewController" bundle:nil];
+    
+    self.sentCtrlr = [[SentSendishViewController alloc] initWithNibName:@"SentSendishViewController" bundle:nil];
+    
+    self.pages = @[self.receivedCtrlr, self.sentCtrlr];
+
+}
+
 #pragma mark - Page Controller Methods
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    if(nil == viewController)
+    {
+        return self.pages[0];
+    }
+    
+    NSInteger i = [self.pages indexOfObject:viewController];
+    
+    if(i >= [self.pages count]-1)
+    {
+        return nil;
+    }
+    
+    return self.pages[i+1];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    if(nil == viewController)
+    {
+        return self.pages[0];
+    }
+    
+    NSInteger i =[self.pages indexOfObject:viewController];
+    if(i <= 0)
+    {
+        return nil;
+    }
+    
+    return self.pages[i-1];
+}
+
 
 
 @end

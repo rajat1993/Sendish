@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TakeSendishViewController">
+            <connections>
+                <outlet property="cameraView" destination="7p0-Ww-Ask" id="vh5-Ru-Xn0"/>
+                <outlet property="imgView_captured" destination="sgl-tH-PTs" id="fdJ-4f-n1u"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7p0-Ww-Ask" userLabel="Camera View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sgl-tH-PTs">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4d-Tz-RVS" userLabel="Navigation View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <color key="backgroundColor" red="0.074509803921568626" green="0.054901960784313725" blue="0.047058823529411764" alpha="0.89000000000000001" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="2mV-ZZ-2zG"/>
+                    </constraints>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wI-g5-Zou" userLabel="Bottom View">
+                    <rect key="frame" x="0.0" y="476" width="320" height="92"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxG-zG-n1W">
+                            <rect key="frame" x="22" y="47" width="46" height="30"/>
+                            <state key="normal" title="Flash">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="Action_toggleFlash:" destination="-1" eventType="touchUpInside" id="fec-AL-7ew"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ca-lu-1Ji">
+                            <rect key="frame" x="252" y="47" width="46" height="30"/>
+                            <state key="normal" title="Rotate">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="Action_rotateCamera:" destination="-1" eventType="touchUpInside" id="0hq-OV-9nb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAC-2H-Sfi">
+                            <rect key="frame" x="138" y="32" width="45" height="45"/>
+                            <state key="normal" title="Take">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="Action_captureImage:" destination="-1" eventType="touchUpInside" id="zzZ-Lp-6Vs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.027450980392156862" green="0.011764705882352941" blue="0.0" alpha="0.83000000000000007" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="92" id="tSu-ke-i8h"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Lyon, France" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="iP9-Ls-foF" userLabel="Lyon, France">
+                    <rect key="frame" x="0.0" y="64" width="320" height="30"/>
+                    <color key="backgroundColor" red="0.12941176470588234" green="0.094117647058823528" blue="0.12941176470588234" alpha="0.95999999999999996" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Q8e-c4-wPq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.5725490196078431" green="0.12941176470588234" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="p4d-Tz-RVS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4r5-yZ-g6O"/>
+                <constraint firstAttribute="trailing" secondItem="7p0-Ww-Ask" secondAttribute="trailing" id="5hY-6X-dJR"/>
+                <constraint firstAttribute="bottom" secondItem="sgl-tH-PTs" secondAttribute="bottom" id="5p5-ON-a0i"/>
+                <constraint firstAttribute="trailing" secondItem="iP9-Ls-foF" secondAttribute="trailing" id="6FZ-Qs-P5a"/>
+                <constraint firstAttribute="bottom" secondItem="7wI-g5-Zou" secondAttribute="bottom" id="8HA-HU-85L"/>
+                <constraint firstItem="p4d-Tz-RVS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AmR-4i-5pr"/>
+                <constraint firstItem="iP9-Ls-foF" firstAttribute="top" secondItem="p4d-Tz-RVS" secondAttribute="bottom" id="KSe-Nh-dFK"/>
+                <constraint firstItem="sgl-tH-PTs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lob-8o-aAq"/>
+                <constraint firstItem="7p0-Ww-Ask" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PRn-pW-mwh"/>
+                <constraint firstAttribute="trailing" secondItem="sgl-tH-PTs" secondAttribute="trailing" id="QQM-7K-QfO"/>
+                <constraint firstItem="sgl-tH-PTs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VsJ-jx-YXS"/>
+                <constraint firstItem="iP9-Ls-foF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xff-iP-uHU"/>
+                <constraint firstAttribute="trailing" secondItem="7wI-g5-Zou" secondAttribute="trailing" id="aQ7-sz-gAb"/>
+                <constraint firstAttribute="bottom" secondItem="7p0-Ww-Ask" secondAttribute="bottom" id="coA-qP-JFZ"/>
+                <constraint firstAttribute="trailing" secondItem="p4d-Tz-RVS" secondAttribute="trailing" id="tMn-WD-Wl2"/>
+                <constraint firstItem="7wI-g5-Zou" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uez-oG-3h7"/>
+                <constraint firstItem="7p0-Ww-Ask" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uug-Hm-t6R"/>
+            </constraints>
+            <point key="canvasLocation" x="349" y="289"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

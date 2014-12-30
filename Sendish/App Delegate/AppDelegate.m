@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+#import "TakeSendishViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    MainViewController *rootObj = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    TakeSendishViewController *rootObj = [[TakeSendishViewController alloc] initWithNibName:@"TakeSendishViewController" bundle:nil];
     UINavigationController *navObj = [[UINavigationController alloc] initWithRootViewController:rootObj];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
