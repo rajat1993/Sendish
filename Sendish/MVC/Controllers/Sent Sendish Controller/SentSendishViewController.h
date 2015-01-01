@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SentSendishViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *navigationView;
 
 @end

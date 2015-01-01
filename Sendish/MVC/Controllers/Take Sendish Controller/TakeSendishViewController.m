@@ -8,12 +8,15 @@
 
 #import "TakeSendishViewController.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
+#import "Constants.h"
 
 @interface TakeSendishViewController ()
 
-@property BOOL isFlashOn;
+@property AlertView *alertObj;
+@property UIView *blurView;
 
 @property AVCaptureSession *session;
+@property AVCaptureVideoPreviewLayer *previewLayer;
 @property AVCaptureStillImageOutput *stillImageOutput;
 @property AVCaptureDevice *device;
 
@@ -39,16 +42,13 @@
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
     
-    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    
-    if([devices count] <= 1)
-    {
-        [self setupCameraViewWithCamera:1];
-    }
-    else
-    {
-        [self setupCameraViewWithCamera:0];
-    }
+    [self performSelectorOnMainThread:@selector(setupCameraView) withObject:nil waitUntilDone:NO];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.session stopRunning];
+    self.session = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,20 +68,20 @@
 
 #pragma mark - Setter Methods
 
--(void)setupCameraViewWithCamera : (NSInteger)deviceIndex
+-(void)setupCameraView
 {
     self.session = [[AVCaptureSession alloc] init];
     self.session.sessionPreset = AVCaptureSessionPresetPhoto;
     
-    AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
+    self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
     
-    previewLayer.frame = self.cameraView.bounds;
+    self.previewLayer.frame = self.cameraView.bounds;
     
-    [self.cameraView.layer addSublayer:previewLayer];
+    [self.cameraView.layer addSublayer:self.previewLayer];
     
     NSArray *possibleDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
 
-    self.device = [possibleDevices objectAtIndex:deviceIndex];
+    self.device = [possibleDevices firstObject];
     
     NSError *error = nil;
 
@@ -113,37 +113,20 @@
         return;
     }
     
-    if(self.isFlashOn)
+    if(self.flashView.hidden)
     {
-        self.isFlashOn = NO;
-        
-        [self.session beginConfiguration];
-        [self.device lockForConfiguration:nil];
-        
-        // Set torch to on
-        [self.device setTorchMode:AVCaptureTorchModeOff];
-        
-        [self.device unlockForConfiguration];
-        [self.session commitConfiguration];
+        [self.flashView setHidden:NO];
     }
     else
     {
-        self.isFlashOn = YES;
-        
-        [self.session beginConfiguration];
-        [self.device lockForConfiguration:nil];
-        
-        // Set torch to on
-        [self.device setTorchMode:AVCaptureTorchModeOn];
-        
-        [self.device unlockForConfiguration];
-        [self.session commitConfiguration];
+        [self.flashView setHidden:YES];
     }
-
 }
 
 - (IBAction)Action_captureImage:(id)sender
 {
+    self.alertObj = [[AlertView alloc] init];
+    
     if(self.cameraView.hidden == YES)
     {
         self.cameraView.hidden = NO;
@@ -167,11 +150,11 @@
                 
                 ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
                 
-                [library saveImage:captureImage toAlbum:@"Sendish" withCompletionBlock:^(NSError *error) {
+                [library saveImage:captureImage toAlbum:@"SENDISH" withCompletionBlock:^(NSError *error) {
                     
                     if(error)
                     {
-                        
+                        [self.alertObj showStaticAlertWithTitle:@"" AndMessage:@"Unable to save photo at this time.\nPlease try again later."];
                     }
                 }];
             }
@@ -190,18 +173,145 @@
         return;
     }
     
-    self.session = nil;
-
+    NSArray *possibleDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    for (AVCaptureDeviceInput *input in [self.session inputs])
+    {
+        [self.session removeInput:input];
+    }
+    
+//    CATransition *animation = [CATransition animation];
+//    animation.duration = .75f;
+//    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    animation.type = @"oglFlip";
+//    animation.delegate = self;
+    
+    NSError *error = nil;
+    
     // Set torch to on
     if([self.device position] == AVCaptureDevicePositionBack)
     {
-        [self setupCameraViewWithCamera:1];
+        
+//        animation.subtype = kCATransitionFromLeft;
+
+        self.device = [possibleDevices objectAtIndex:1];
+        
+        AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
+        if (!input) {
+            // Handle the error appropriately.
+            NSLog(@"ERROR: trying to open camera: %@", error);
+        }
+        
+        [self.session addInput:input];
+
     }
     else
     {
-        [self setupCameraViewWithCamera:0];
+//        animation.subtype = kCATransitionFromRight;
+
+        self.device = [possibleDevices objectAtIndex:0];
+        
+        AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
+        if (!input) {
+            // Handle the error appropriately.
+            NSLog(@"ERROR: trying to open camera: %@", error);
+        }
+        
+        [self.session addInput:input];
     }
     
+//    [self.previewLayer addAnimation:animation forKey:nil];
+
 }
+
+- (IBAction)Action_ON:(id)sender
+{
+    if(self.device.torchMode == AVCaptureTorchModeOn)
+    {
+        [self.flashView setHidden:YES];
+        return;
+    }
+    
+    [self setFlashModeTo:@"ON"];
+}
+
+- (IBAction)Action_OFF:(id)sender
+{
+    if(self.device.torchMode == AVCaptureTorchModeOn)
+    {
+        return;
+    }
+    
+    [self setFlashModeTo:@"OFF"];
+}
+
+- (IBAction)Action_AUTO:(id)sender
+{
+    if(self.device.torchMode == AVCaptureTorchModeOn)
+    {
+        return;
+    }
+    
+    [self setFlashModeTo:@"AUTO"];
+}
+
+#pragma mark - Flash Methods
+
+-(void)setFlashModeTo : (NSString *)mode
+{
+    [self.session beginConfiguration];
+    [self.device lockForConfiguration:nil];
+    
+    if([mode isEqualToString:@"ON"])
+    {
+        [self.device setTorchMode:AVCaptureTorchModeOn];
+    }
+    else if ([mode isEqualToString:@"OFF"])
+    {
+        [self.device setTorchMode:AVCaptureTorchModeOff];
+    }
+    else
+    {
+        [self.device setTorchMode:AVCaptureTorchModeAuto];
+    }
+    
+    [self.device unlockForConfiguration];
+    [self.session commitConfiguration];
+    
+    [self.Btn_flash setTitle:mode forState:UIControlStateNormal];
+    [self.flashView setHidden:YES];
+
+}
+
+#pragma mark - Transition Methods
+
+-(void)animationDidStart:(CAAnimation *)anim
+{
+    [self addBlurToView:self.cameraView];
+}
+
+-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    [self.blurView removeFromSuperview];
+}
+
+#pragma mark - Blur effect 
+
+- (void)addBlurToView:(UIView *)view {
+    self.blurView = nil;
+    
+    if([UIBlurEffect class]) { // iOS 8
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        self.blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        self.blurView.frame = self.previewLayer.frame;
+        
+    } else { // workaround for iOS 7
+        self.blurView = [[UIToolbar alloc] initWithFrame:view.bounds];
+    }
+    
+    [self.blurView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [view addSubview:self.blurView];
+}
+
 
 @end

@@ -7,8 +7,11 @@
 //
 
 #import "ReceivedSendishViewController.h"
+#import "NavigationView.h"
 
 @interface ReceivedSendishViewController ()
+
+@property NavigationView *navViewObj;
 
 @end
 
@@ -20,6 +23,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
+    
+    [self setupView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,5 +51,12 @@
 */
 
 #pragma mark - Setter Methods
+
+-(void)setupView
+{
+    self.navViewObj = [[NavigationView alloc] initWithFrame:self.navigationView.frame];
+    
+    [self.navigationView addSubview:self.navViewObj];
+}
 
 @end

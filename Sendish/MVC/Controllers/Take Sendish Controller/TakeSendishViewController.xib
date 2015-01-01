@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TakeSendishViewController">
             <connections>
+                <outlet property="Btn_flash" destination="TxG-zG-n1W" id="utu-jt-CJu"/>
                 <outlet property="cameraView" destination="7p0-Ww-Ask" id="vh5-Ru-Xn0"/>
+                <outlet property="flashView" destination="6OT-f8-bMP" id="gqS-pR-bwh"/>
                 <outlet property="imgView_captured" destination="sgl-tH-PTs" id="fdJ-4f-n1u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7p0-Ww-Ask" userLabel="Camera View">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7p0-Ww-Ask" userLabel="Camera View">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -25,11 +28,30 @@
                 </imageView>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4d-Tz-RVS" userLabel="Navigation View">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-zg-tjL">
+                            <rect key="frame" x="15" y="26" width="46" height="30"/>
+                            <state key="normal" title="Count">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" red="0.074509803921568626" green="0.054901960784313725" blue="0.047058823529411764" alpha="0.89000000000000001" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="2mV-ZZ-2zG"/>
                     </constraints>
                 </view>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Lyon, France" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="iP9-Ls-foF" userLabel="Lyon, France">
+                    <rect key="frame" x="0.0" y="64" width="320" height="30"/>
+                    <color key="backgroundColor" red="0.12941176470588234" green="0.094117647058823528" blue="0.12941176470588234" alpha="0.95999999999999996" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Q8e-c4-wPq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.5725490196078431" green="0.12941176470588234" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wI-g5-Zou" userLabel="Bottom View">
                     <rect key="frame" x="0.0" y="476" width="320" height="92"/>
                     <subviews>
@@ -63,22 +85,51 @@
                                 <action selector="Action_captureImage:" destination="-1" eventType="touchUpInside" id="zzZ-Lp-6Vs"/>
                             </connections>
                         </button>
+                        <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6OT-f8-bMP" userLabel="Flash View">
+                            <rect key="frame" x="0.0" y="11" width="136" height="37"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMe-Kl-18i">
+                                    <rect key="frame" x="81" y="4" width="35" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="ON">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="Action_ON:" destination="-1" eventType="touchUpInside" id="i50-cG-9jZ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8z-RJ-ure">
+                                    <rect key="frame" x="8" y="4" width="35" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="AUTO">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="Action_AUTO:" destination="-1" eventType="touchUpInside" id="zFq-tJ-fzE"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BQ-AN-5i6">
+                                    <rect key="frame" x="46" y="4" width="35" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="OFF">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="Action_OFF:" destination="-1" eventType="touchUpInside" id="Yzg-1X-GKb"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.027450980392156862" green="0.011764705882352941" blue="0.0" alpha="0.83000000000000007" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="92" id="tSu-ke-i8h"/>
                     </constraints>
                 </view>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Lyon, France" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="iP9-Ls-foF" userLabel="Lyon, France">
-                    <rect key="frame" x="0.0" y="64" width="320" height="30"/>
-                    <color key="backgroundColor" red="0.12941176470588234" green="0.094117647058823528" blue="0.12941176470588234" alpha="0.95999999999999996" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Q8e-c4-wPq"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.5725490196078431" green="0.12941176470588234" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -100,7 +151,7 @@
                 <constraint firstItem="7wI-g5-Zou" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uez-oG-3h7"/>
                 <constraint firstItem="7p0-Ww-Ask" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uug-Hm-t6R"/>
             </constraints>
-            <point key="canvasLocation" x="349" y="289"/>
+            <point key="canvasLocation" x="516" y="287"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

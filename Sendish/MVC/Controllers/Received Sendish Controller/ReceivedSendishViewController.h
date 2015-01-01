@@ -10,4 +10,5 @@
 
 @interface ReceivedSendishViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *navigationView;
 @end

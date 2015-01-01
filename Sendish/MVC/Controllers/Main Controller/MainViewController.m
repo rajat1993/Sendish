@@ -64,7 +64,10 @@
     self.pageViewCtrlr.dataSource = self;
     self.pageViewCtrlr.delegate = self;
 
-    [self.pageViewCtrlr.view setFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-64)];
+    [self.pageViewCtrlr setViewControllers:@[self.pages[1]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
+    }];
+
+    [self.pageViewCtrlr.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
     [self addChildViewController:self.pageViewCtrlr];
     [self.view addSubview:self.pageViewCtrlr.view];
@@ -76,9 +79,11 @@
 {
     self.receivedCtrlr = [[ReceivedSendishViewController alloc] initWithNibName:@"ReceivedSendishViewController" bundle:nil];
     
+    self.takeSendishCtrlr = [[TakeSendishViewController alloc] initWithNibName:@"TakeSendishViewController" bundle:nil];
+    
     self.sentCtrlr = [[SentSendishViewController alloc] initWithNibName:@"SentSendishViewController" bundle:nil];
     
-    self.pages = @[self.receivedCtrlr, self.sentCtrlr];
+    self.pages = @[self.receivedCtrlr, self.takeSendishCtrlr, self.sentCtrlr];
 
 }
 

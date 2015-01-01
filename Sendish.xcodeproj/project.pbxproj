@@ -20,6 +20,7 @@
 		7126FFE01A5308C10004EADF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFDF1A5308C10004EADF /* QuartzCore.framework */; };
 		7126FFE91A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126FFE81A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		7126FFEB1A53184C0004EADF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFEA1A53184C0004EADF /* AssetsLibrary.framework */; };
+		716E304E1A559B0D0007B44C /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E304D1A559B0D0007B44C /* AlertView.m */; };
 		71B48BD31A51AFC600A37FF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BD21A51AFC600A37FF7 /* main.m */; };
 		71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDD1A51AFC600A37FF7 /* Images.xcassets */; };
 		71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDF1A51AFC600A37FF7 /* LaunchScreen.xib */; };
@@ -65,6 +66,9 @@
 		7126FFE71A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		7126FFE81A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		7126FFEA1A53184C0004EADF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		716E304C1A559B0D0007B44C /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		716E304D1A559B0D0007B44C /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		716E30501A559B2D0007B44C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		71B48BCD1A51AFC600A37FF7 /* Sendish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sendish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B48BD11A51AFC600A37FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71B48BD21A51AFC600A37FF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -163,6 +167,23 @@
 			path = ALAssetsLibrary_CustomPhotoAlbum;
 			sourceTree = "<group>";
 		};
+		716E304B1A559AC40007B44C /* Alert View */ = {
+			isa = PBXGroup;
+			children = (
+				716E304C1A559B0D0007B44C /* AlertView.h */,
+				716E304D1A559B0D0007B44C /* AlertView.m */,
+			);
+			path = "Alert View";
+			sourceTree = "<group>";
+		};
+		716E304F1A559B1E0007B44C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				716E30501A559B2D0007B44C /* Constants.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		71B48BC41A51AFC500A37FF7 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +211,7 @@
 		71B48BCF1A51AFC600A37FF7 /* Sendish */ = {
 			isa = PBXGroup;
 			children = (
+				716E304F1A559B1E0007B44C /* Constants */,
 				7126FFE11A5315FF0004EADF /* Third Library */,
 				71B48BFA1A51B16900A37FF7 /* MVC */,
 				71B48BF61A51B04200A37FF7 /* App Delegate */,
@@ -255,6 +277,7 @@
 		71B48BFC1A51B19500A37FF7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				716E304B1A559AC40007B44C /* Alert View */,
 				71B48C161A51BB1100A37FF7 /* Navigation View */,
 			);
 			path = Views;
@@ -440,6 +463,7 @@
 				71B48C081A51B77700A37FF7 /* SignupViewController.m in Sources */,
 				71B48C021A51B2E300A37FF7 /* RootViewController.m in Sources */,
 				7126FFC91A52FE2F0004EADF /* ReceivedSendishViewController.m in Sources */,
+				716E304E1A559B0D0007B44C /* AlertView.m in Sources */,
 				7126FFD51A5303970004EADF /* TakeSendishViewController.m in Sources */,
 				71B48C0E1A51B85300A37FF7 /* LoginViewController.m in Sources */,
 			);

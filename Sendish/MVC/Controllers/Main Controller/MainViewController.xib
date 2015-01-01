@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6245"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
-                <outlet property="navigationView" destination="o3N-7A-S3D" id="z0n-2U-xud"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,21 +18,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="64" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3N-7A-S3D">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="64" id="eU0-cE-EhU"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="o3N-7A-S3D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Q8-Te-s0w"/>
-                <constraint firstAttribute="trailing" secondItem="o3N-7A-S3D" secondAttribute="trailing" id="Prj-aJ-IDG"/>
-                <constraint firstItem="o3N-7A-S3D" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W9M-66-Wha"/>
-            </constraints>
-            <point key="canvasLocation" x="122" y="217"/>
+            <point key="canvasLocation" x="163" y="209"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -7,6 +7,8 @@
 //
 
 #import "RootViewController.h"
+#import "SignupViewController.h"
+#import "LoginViewController.h"
 
 @interface RootViewController ()
 
@@ -14,9 +16,12 @@
 
 @implementation RootViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,17 +39,20 @@
 }
 */
 
-
 #pragma mark - Button Actions
 
 - (IBAction)Action_signUp:(id)sender
 {
+    SignupViewController *signUpObj = [[SignupViewController alloc] initWithNibName:@"SignupViewController" bundle:nil];
     
+    [self.navigationController pushViewController:signUpObj animated:YES];
 }
 
 - (IBAction)Action_login:(id)sender
 {
+    LoginViewController *loginObj = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     
+    [self.navigationController pushViewController:loginObj animated:YES];
 }
 
 @end

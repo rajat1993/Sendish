@@ -14,12 +14,20 @@
 
 @implementation LoginViewController
 
-- (void)viewDidLoad {
+#pragma mark - Internal Methods
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationController.navigationBarHidden = NO;
+    
+    [self setupView];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -33,5 +41,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Setter Methods
+
+-(void)setupView
+{
+//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+//    self.navigationController.navigationItem.backBarButtonItem = backButton;
+    
+    self.navigationItem.title = @"Log In";
+    self.navigationItem.leftBarButtonItem.title = @"";
+}
 
 @end

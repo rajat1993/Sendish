@@ -7,16 +7,32 @@
 //
 
 #import "SentSendishViewController.h"
+#import "NavigationView.h"
 
 @interface SentSendishViewController ()
+
+@property NavigationView *navViewObj;
 
 @end
 
 @implementation SentSendishViewController
 
-- (void)viewDidLoad {
+#pragma mark - Internal Methods
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
+    
+    [self setupView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +49,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Setter Methods
+
+-(void)setupView
+{
+    self.navViewObj = [[NavigationView alloc] initWithFrame:self.navigationView.frame];
+    
+    [self.navigationView addSubview:self.navViewObj];
+}
 
 @end

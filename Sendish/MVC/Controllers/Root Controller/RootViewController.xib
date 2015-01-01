@@ -17,7 +17,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RwG-kZ-Lyy">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxU-ut-ulZ">
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxU-ut-ulZ">
                     <rect key="frame" x="58" y="502" width="204" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="e0h-5r-g5E"/>
@@ -30,7 +30,7 @@
                         <action selector="Action_login:" destination="-1" eventType="touchUpInside" id="nfO-am-DT8"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ud-cv-lPj">
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ud-cv-lPj">
                     <rect key="frame" x="58" y="449" width="204" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="nvD-7X-H4V"/>
@@ -44,7 +44,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="RwG-kZ-Lyy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5dl-9s-93w"/>
                 <constraint firstItem="RwG-kZ-Lyy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A6H-eQ-iqF"/>
@@ -55,7 +55,7 @@
                 <constraint firstAttribute="centerX" secondItem="sxU-ut-ulZ" secondAttribute="centerX" id="nhp-M9-0iA"/>
                 <constraint firstAttribute="bottom" secondItem="sxU-ut-ulZ" secondAttribute="bottom" constant="36" id="tTv-GY-niF"/>
             </constraints>
-            <point key="canvasLocation" x="352" y="302"/>
+            <point key="canvasLocation" x="-63" y="-34"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
