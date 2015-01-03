@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NickNameViewController">
+            <connections>
+                <outlet property="Action_getStarted" destination="f40-cd-TcQ" id="UPu-9Z-Nnq"/>
+                <outlet property="TF_nickName" destination="5Bb-zE-oDd" id="CAO-be-KKV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Bb-zE-oDd">
+                    <rect key="frame" x="0.0" y="107" width="320" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5Bb-zE-oDd" secondAttribute="height" multiplier="8:1" id="4Te-ud-xql"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f40-cd-TcQ">
+                    <rect key="frame" x="50" y="208" width="220" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="mXF-9j-ivY"/>
+                    </constraints>
+                    <state key="normal" title="Get Started">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="Action_getStarted:" destination="-1" eventType="touchUpInside" id="B57-KG-qqt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="5Bb-zE-oDd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MPC-th-hdp"/>
+                <constraint firstAttribute="trailing" secondItem="f40-cd-TcQ" secondAttribute="trailing" constant="50" id="PIx-Qc-YCT"/>
+                <constraint firstItem="f40-cd-TcQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="TPJ-Ev-11C"/>
+                <constraint firstItem="f40-cd-TcQ" firstAttribute="top" secondItem="5Bb-zE-oDd" secondAttribute="bottom" constant="61" id="Vxj-1L-T2X"/>
+                <constraint firstItem="5Bb-zE-oDd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="107" id="n73-cV-8Co"/>
+                <constraint firstAttribute="trailing" secondItem="5Bb-zE-oDd" secondAttribute="trailing" id="uFs-uo-gwx"/>
+            </constraints>
+            <point key="canvasLocation" x="206" y="318"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

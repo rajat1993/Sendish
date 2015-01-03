@@ -100,7 +100,6 @@
     [self.session addOutput:self.stillImageOutput];
 
     [self.session startRunning];
-
 }
 
 

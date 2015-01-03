@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK.h>
 
-@interface SignupViewController : UIViewController
+@interface SignupViewController : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *TF_fullName;
+@property (weak, nonatomic) IBOutlet UITextField *TF_email;
+@property (weak, nonatomic) IBOutlet UITextField *TF_password;
+
+
+- (IBAction)Action_fbSignup:(id)sender;
+- (IBAction)Action_Next:(id)sender;
 
 @end

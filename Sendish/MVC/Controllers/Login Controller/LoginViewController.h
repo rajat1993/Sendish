@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *TF_loginEmail;
+@property (weak, nonatomic) IBOutlet UITextField *TF_loginPassword;
+
+- (IBAction)Action_fbLogin:(id)sender;
+- (IBAction)Action_forgotPassword:(id)sender;
+- (IBAction)Action_Done:(id)sender;
 
 @end

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7102C20F1A57E5290064D1FD /* loader.png in Resources */ = {isa = PBXBuildFile; fileRef = 7102C20B1A57E5290064D1FD /* loader.png */; };
+		7102C2101A57E5290064D1FD /* LoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102C20D1A57E5290064D1FD /* LoaderView.m */; };
+		7102C2111A57E5290064D1FD /* LoaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7102C20E1A57E5290064D1FD /* LoaderView.xib */; };
+		7102C2171A58073D0064D1FD /* GetLcationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102C2151A58073D0064D1FD /* GetLcationViewController.m */; };
+		7102C2181A58073D0064D1FD /* GetLcationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7102C2161A58073D0064D1FD /* GetLcationViewController.xib */; };
+		7102C21A1A58081A0064D1FD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7102C2191A58081A0064D1FD /* CoreLocation.framework */; };
+		7102C21F1A580B7A0064D1FD /* IOSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102C21E1A580B7A0064D1FD /* IOSRequest.m */; };
+		7102C2241A580BE30064D1FD /* NickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102C2221A580BE30064D1FD /* NickNameViewController.m */; };
+		7102C2251A580BE30064D1FD /* NickNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7102C2231A580BE30064D1FD /* NickNameViewController.xib */; };
+		7102C22A1A5811890064D1FD /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102C2281A5811890064D1FD /* ShareViewController.m */; };
+		7102C22B1A5811890064D1FD /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7102C2291A5811890064D1FD /* ShareViewController.xib */; };
 		7126FFC91A52FE2F0004EADF /* ReceivedSendishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126FFC71A52FE2F0004EADF /* ReceivedSendishViewController.m */; };
 		7126FFCA1A52FE2F0004EADF /* ReceivedSendishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7126FFC81A52FE2F0004EADF /* ReceivedSendishViewController.xib */; };
 		7126FFCF1A52FE530004EADF /* SentSendishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126FFCD1A52FE530004EADF /* SentSendishViewController.m */; };
@@ -36,6 +47,7 @@
 		71B48C151A51BADA00A37FF7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48C131A51BADA00A37FF7 /* MainViewController.xib */; };
 		71B48C191A51BD0E00A37FF7 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48C181A51BD0E00A37FF7 /* NavigationView.m */; };
 		71B48C1B1A51BD2400A37FF7 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48C1A1A51BD2400A37FF7 /* NavigationView.xib */; };
+		E17C5A4207717D5F733C3EAF /* libPods-Sendish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1E61305469F857C3AD02C /* libPods-Sendish.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +61,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CA270C94336AC9E84EABD58 /* Pods-Sendish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sendish.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sendish/Pods-Sendish.release.xcconfig"; sourceTree = "<group>"; };
+		7102C2081A57E0240064D1FD /* libPods-Sendish-Facebook-iOS-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Sendish-Facebook-iOS-SDK.a"; path = "Pods/build/Debug-iphoneos/libPods-Sendish-Facebook-iOS-SDK.a"; sourceTree = "<group>"; };
+		7102C20B1A57E5290064D1FD /* loader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loader.png; sourceTree = "<group>"; };
+		7102C20C1A57E5290064D1FD /* LoaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoaderView.h; sourceTree = "<group>"; };
+		7102C20D1A57E5290064D1FD /* LoaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoaderView.m; sourceTree = "<group>"; };
+		7102C20E1A57E5290064D1FD /* LoaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoaderView.xib; sourceTree = "<group>"; };
+		7102C2121A5804B10064D1FD /* WebURLs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebURLs.h; sourceTree = "<group>"; };
+		7102C2141A58073D0064D1FD /* GetLcationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetLcationViewController.h; sourceTree = "<group>"; };
+		7102C2151A58073D0064D1FD /* GetLcationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetLcationViewController.m; sourceTree = "<group>"; };
+		7102C2161A58073D0064D1FD /* GetLcationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetLcationViewController.xib; sourceTree = "<group>"; };
+		7102C2191A58081A0064D1FD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7102C21D1A580B7A0064D1FD /* IOSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSRequest.h; sourceTree = "<group>"; };
+		7102C21E1A580B7A0064D1FD /* IOSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSRequest.m; sourceTree = "<group>"; };
+		7102C2211A580BE30064D1FD /* NickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NickNameViewController.h; sourceTree = "<group>"; };
+		7102C2221A580BE30064D1FD /* NickNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NickNameViewController.m; sourceTree = "<group>"; };
+		7102C2231A580BE30064D1FD /* NickNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NickNameViewController.xib; sourceTree = "<group>"; };
+		7102C2271A5811890064D1FD /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		7102C2281A5811890064D1FD /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		7102C2291A5811890064D1FD /* ShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
+		711BA4E61A57D30300483C78 /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 		7126FFC61A52FE2F0004EADF /* ReceivedSendishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedSendishViewController.h; sourceTree = "<group>"; };
 		7126FFC71A52FE2F0004EADF /* ReceivedSendishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedSendishViewController.m; sourceTree = "<group>"; };
 		7126FFC81A52FE2F0004EADF /* ReceivedSendishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceivedSendishViewController.xib; sourceTree = "<group>"; };
@@ -94,6 +126,8 @@
 		71B48C171A51BD0E00A37FF7 /* NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationView.h; sourceTree = "<group>"; };
 		71B48C181A51BD0E00A37FF7 /* NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
 		71B48C1A1A51BD2400A37FF7 /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
+		CBA1E61305469F857C3AD02C /* libPods-Sendish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sendish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26489F450B5373BAD32CBDD /* Pods-Sendish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sendish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sendish/Pods-Sendish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +135,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7102C21A1A58081A0064D1FD /* CoreLocation.framework in Frameworks */,
 				7126FFEB1A53184C0004EADF /* AssetsLibrary.framework in Frameworks */,
 				7126FFE01A5308C10004EADF /* QuartzCore.framework in Frameworks */,
 				7126FFDE1A5308BB0004EADF /* ImageIO.framework in Frameworks */,
 				7126FFDC1A5308B30004EADF /* AVFoundation.framework in Frameworks */,
 				7126FFDA1A5308AC0004EADF /* CoreMedia.framework in Frameworks */,
 				7126FFD81A5308A30004EADF /* CoreVideo.framework in Frameworks */,
+				E17C5A4207717D5F733C3EAF /* libPods-Sendish.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +156,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7102C20A1A57E5290064D1FD /* LoaderView */ = {
+			isa = PBXGroup;
+			children = (
+				7102C20B1A57E5290064D1FD /* loader.png */,
+				7102C20C1A57E5290064D1FD /* LoaderView.h */,
+				7102C20D1A57E5290064D1FD /* LoaderView.m */,
+				7102C20E1A57E5290064D1FD /* LoaderView.xib */,
+			);
+			path = LoaderView;
+			sourceTree = "<group>";
+		};
+		7102C2131A5807290064D1FD /* GetLocation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7102C2141A58073D0064D1FD /* GetLcationViewController.h */,
+				7102C2151A58073D0064D1FD /* GetLcationViewController.m */,
+				7102C2161A58073D0064D1FD /* GetLcationViewController.xib */,
+			);
+			path = "GetLocation Controller";
+			sourceTree = "<group>";
+		};
+		7102C21B1A580B7A0064D1FD /* Web Requests */ = {
+			isa = PBXGroup;
+			children = (
+				7102C21C1A580B7A0064D1FD /* IOS Requests */,
+			);
+			path = "Web Requests";
+			sourceTree = "<group>";
+		};
+		7102C21C1A580B7A0064D1FD /* IOS Requests */ = {
+			isa = PBXGroup;
+			children = (
+				7102C21D1A580B7A0064D1FD /* IOSRequest.h */,
+				7102C21E1A580B7A0064D1FD /* IOSRequest.m */,
+			);
+			path = "IOS Requests";
+			sourceTree = "<group>";
+		};
+		7102C2201A580BCF0064D1FD /* Nickname Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7102C2211A580BE30064D1FD /* NickNameViewController.h */,
+				7102C2221A580BE30064D1FD /* NickNameViewController.m */,
+				7102C2231A580BE30064D1FD /* NickNameViewController.xib */,
+			);
+			path = "Nickname Controller";
+			sourceTree = "<group>";
+		};
+		7102C2261A58117F0064D1FD /* Share Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7102C2271A5811890064D1FD /* ShareViewController.h */,
+				7102C2281A5811890064D1FD /* ShareViewController.m */,
+				7102C2291A5811890064D1FD /* ShareViewController.xib */,
+			);
+			path = "Share Controller";
+			sourceTree = "<group>";
+		};
+		7102C22C1A585D350064D1FD /* Tutorial Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tutorial Screens";
+			sourceTree = "<group>";
+		};
 		7126FFC51A52FCDE0004EADF /* Received Sendish Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				716E30501A559B2D0007B44C /* Constants.h */,
+				711BA4E61A57D30300483C78 /* Colors.h */,
+				7102C2121A5804B10064D1FD /* WebURLs.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -196,6 +299,8 @@
 				71B48BCF1A51AFC600A37FF7 /* Sendish */,
 				71B48BE91A51AFC600A37FF7 /* SendishTests */,
 				71B48BCE1A51AFC600A37FF7 /* Products */,
+				BD43364F1DC66019585F7F03 /* Pods */,
+				DE6A9C850FEE65B84FDE00F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,6 +316,7 @@
 		71B48BCF1A51AFC600A37FF7 /* Sendish */ = {
 			isa = PBXGroup;
 			children = (
+				7102C21B1A580B7A0064D1FD /* Web Requests */,
 				716E304F1A559B1E0007B44C /* Constants */,
 				7126FFE11A5315FF0004EADF /* Third Library */,
 				71B48BFA1A51B16900A37FF7 /* MVC */,
@@ -277,6 +383,7 @@
 		71B48BFC1A51B19500A37FF7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7102C20A1A57E5290064D1FD /* LoaderView */,
 				716E304B1A559AC40007B44C /* Alert View */,
 				71B48C161A51BB1100A37FF7 /* Navigation View */,
 			);
@@ -286,6 +393,10 @@
 		71B48BFD1A51B1A100A37FF7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7102C22C1A585D350064D1FD /* Tutorial Screens */,
+				7102C2261A58117F0064D1FD /* Share Controller */,
+				7102C2201A580BCF0064D1FD /* Nickname Controller */,
+				7102C2131A5807290064D1FD /* GetLocation Controller */,
 				7126FFD11A5303850004EADF /* Take Sendish Controller */,
 				7126FFCB1A52FE470004EADF /* Sent Sendish Controller */,
 				7126FFC51A52FCDE0004EADF /* Received Sendish Controller */,
@@ -347,6 +458,25 @@
 			path = "Navigation View";
 			sourceTree = "<group>";
 		};
+		BD43364F1DC66019585F7F03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E26489F450B5373BAD32CBDD /* Pods-Sendish.debug.xcconfig */,
+				0CA270C94336AC9E84EABD58 /* Pods-Sendish.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE6A9C850FEE65B84FDE00F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7102C2191A58081A0064D1FD /* CoreLocation.framework */,
+				7102C2081A57E0240064D1FD /* libPods-Sendish-Facebook-iOS-SDK.a */,
+				CBA1E61305469F857C3AD02C /* libPods-Sendish.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -354,9 +484,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71B48BF01A51AFC600A37FF7 /* Build configuration list for PBXNativeTarget "Sendish" */;
 			buildPhases = (
+				A912BF129C377B17500BAD4A /* Check Pods Manifest.lock */,
 				71B48BC91A51AFC500A37FF7 /* Sources */,
 				71B48BCA1A51AFC500A37FF7 /* Frameworks */,
 				71B48BCB1A51AFC500A37FF7 /* Resources */,
+				665C3953BD393EB8B3B021EC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -428,15 +560,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				71B48C0F1A51B85300A37FF7 /* LoginViewController.xib in Resources */,
+				7102C2111A57E5290064D1FD /* LoaderView.xib in Resources */,
 				71B48C151A51BADA00A37FF7 /* MainViewController.xib in Resources */,
 				7126FFCA1A52FE2F0004EADF /* ReceivedSendishViewController.xib in Resources */,
+				7102C2251A580BE30064D1FD /* NickNameViewController.xib in Resources */,
 				71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */,
 				71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */,
 				71B48C091A51B77700A37FF7 /* SignupViewController.xib in Resources */,
+				7102C2181A58073D0064D1FD /* GetLcationViewController.xib in Resources */,
 				71B48C031A51B2E300A37FF7 /* RootViewController.xib in Resources */,
+				7102C22B1A5811890064D1FD /* ShareViewController.xib in Resources */,
 				71B48C1B1A51BD2400A37FF7 /* NavigationView.xib in Resources */,
 				7126FFD61A5303970004EADF /* TakeSendishViewController.xib in Resources */,
 				7126FFD01A52FE530004EADF /* SentSendishViewController.xib in Resources */,
+				7102C20F1A57E5290064D1FD /* loader.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +585,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		665C3953BD393EB8B3B021EC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sendish/Pods-Sendish-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A912BF129C377B17500BAD4A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		71B48BC91A51AFC500A37FF7 /* Sources */ = {
@@ -462,9 +632,14 @@
 				71B48BD31A51AFC600A37FF7 /* main.m in Sources */,
 				71B48C081A51B77700A37FF7 /* SignupViewController.m in Sources */,
 				71B48C021A51B2E300A37FF7 /* RootViewController.m in Sources */,
+				7102C2241A580BE30064D1FD /* NickNameViewController.m in Sources */,
+				7102C2101A57E5290064D1FD /* LoaderView.m in Sources */,
+				7102C21F1A580B7A0064D1FD /* IOSRequest.m in Sources */,
 				7126FFC91A52FE2F0004EADF /* ReceivedSendishViewController.m in Sources */,
 				716E304E1A559B0D0007B44C /* AlertView.m in Sources */,
 				7126FFD51A5303970004EADF /* TakeSendishViewController.m in Sources */,
+				7102C2171A58073D0064D1FD /* GetLcationViewController.m in Sources */,
+				7102C22A1A5811890064D1FD /* ShareViewController.m in Sources */,
 				71B48C0E1A51B85300A37FF7 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +708,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -569,7 +744,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -579,11 +754,16 @@
 		};
 		71B48BF11A51AFC600A37FF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E26489F450B5373BAD32CBDD /* Pods-Sendish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sendish/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -591,11 +771,16 @@
 		};
 		71B48BF21A51AFC600A37FF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CA270C94336AC9E84EABD58 /* Pods-Sendish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sendish/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
