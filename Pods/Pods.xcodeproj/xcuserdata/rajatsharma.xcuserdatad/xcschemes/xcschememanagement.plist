@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-Sendish-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Sendish-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Sendish-Facebook-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Sendish-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Sendish.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>09BC650278F5AA304D10E364</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5CEAEFCA9EC1AE6F4138CE0A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76F9ED1A01A81F30184BF2A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9CF8A340B8D7028BBFD83068</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5A342217FCFE4DA0E719169</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
