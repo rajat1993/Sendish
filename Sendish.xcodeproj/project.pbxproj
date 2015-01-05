@@ -13,11 +13,14 @@
 		7102C2171A58073D0064D1FD /* GetLcationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102C2151A58073D0064D1FD /* GetLcationViewController.m */; };
 		7102C2181A58073D0064D1FD /* GetLcationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7102C2161A58073D0064D1FD /* GetLcationViewController.xib */; };
 		7102C21A1A58081A0064D1FD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7102C2191A58081A0064D1FD /* CoreLocation.framework */; };
-		7102C21F1A580B7A0064D1FD /* IOSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102C21E1A580B7A0064D1FD /* IOSRequest.m */; };
 		7102C2241A580BE30064D1FD /* NickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102C2221A580BE30064D1FD /* NickNameViewController.m */; };
 		7102C2251A580BE30064D1FD /* NickNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7102C2231A580BE30064D1FD /* NickNameViewController.xib */; };
 		7102C22A1A5811890064D1FD /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102C2281A5811890064D1FD /* ShareViewController.m */; };
 		7102C22B1A5811890064D1FD /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7102C2291A5811890064D1FD /* ShareViewController.xib */; };
+		711F960F1A59101E00BF7A06 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F960D1A59101E00BF7A06 /* TutorialViewController.m */; };
+		711F96101A59101E00BF7A06 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711F960E1A59101E00BF7A06 /* TutorialViewController.xib */; };
+		711F96141A59132100BF7A06 /* demoImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 711F96121A59132100BF7A06 /* demoImage1.jpg */; };
+		711F96151A59132100BF7A06 /* demoImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 711F96131A59132100BF7A06 /* demoImage2.jpg */; };
 		7126FFC91A52FE2F0004EADF /* ReceivedSendishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126FFC71A52FE2F0004EADF /* ReceivedSendishViewController.m */; };
 		7126FFCA1A52FE2F0004EADF /* ReceivedSendishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7126FFC81A52FE2F0004EADF /* ReceivedSendishViewController.xib */; };
 		7126FFCF1A52FE530004EADF /* SentSendishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126FFCD1A52FE530004EADF /* SentSendishViewController.m */; };
@@ -31,7 +34,10 @@
 		7126FFE01A5308C10004EADF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFDF1A5308C10004EADF /* QuartzCore.framework */; };
 		7126FFE91A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126FFE81A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		7126FFEB1A53184C0004EADF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFEA1A53184C0004EADF /* AssetsLibrary.framework */; };
+		713539821A5AFB3300249630 /* UserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 713539811A5AFB3300249630 /* UserAccount.m */; };
+		713539861A5B038700249630 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 713539851A5B038700249630 /* Base64.m */; };
 		716E304E1A559B0D0007B44C /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E304D1A559B0D0007B44C /* AlertView.m */; };
+		71A7FF8B1A5B0A2400A10475 /* IOSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7FF8A1A5B0A2400A10475 /* IOSRequest.m */; };
 		71B48BD31A51AFC600A37FF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BD21A51AFC600A37FF7 /* main.m */; };
 		71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDD1A51AFC600A37FF7 /* Images.xcassets */; };
 		71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDF1A51AFC600A37FF7 /* LaunchScreen.xib */; };
@@ -72,8 +78,6 @@
 		7102C2151A58073D0064D1FD /* GetLcationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetLcationViewController.m; sourceTree = "<group>"; };
 		7102C2161A58073D0064D1FD /* GetLcationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetLcationViewController.xib; sourceTree = "<group>"; };
 		7102C2191A58081A0064D1FD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		7102C21D1A580B7A0064D1FD /* IOSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSRequest.h; sourceTree = "<group>"; };
-		7102C21E1A580B7A0064D1FD /* IOSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSRequest.m; sourceTree = "<group>"; };
 		7102C2211A580BE30064D1FD /* NickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NickNameViewController.h; sourceTree = "<group>"; };
 		7102C2221A580BE30064D1FD /* NickNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NickNameViewController.m; sourceTree = "<group>"; };
 		7102C2231A580BE30064D1FD /* NickNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NickNameViewController.xib; sourceTree = "<group>"; };
@@ -81,6 +85,11 @@
 		7102C2281A5811890064D1FD /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		7102C2291A5811890064D1FD /* ShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
 		711BA4E61A57D30300483C78 /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		711F960C1A59101E00BF7A06 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		711F960D1A59101E00BF7A06 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		711F960E1A59101E00BF7A06 /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
+		711F96121A59132100BF7A06 /* demoImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demoImage1.jpg; sourceTree = "<group>"; };
+		711F96131A59132100BF7A06 /* demoImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demoImage2.jpg; sourceTree = "<group>"; };
 		7126FFC61A52FE2F0004EADF /* ReceivedSendishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedSendishViewController.h; sourceTree = "<group>"; };
 		7126FFC71A52FE2F0004EADF /* ReceivedSendishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedSendishViewController.m; sourceTree = "<group>"; };
 		7126FFC81A52FE2F0004EADF /* ReceivedSendishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceivedSendishViewController.xib; sourceTree = "<group>"; };
@@ -98,9 +107,15 @@
 		7126FFE71A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		7126FFE81A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		7126FFEA1A53184C0004EADF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		713539801A5AFB3300249630 /* UserAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAccount.h; sourceTree = "<group>"; };
+		713539811A5AFB3300249630 /* UserAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAccount.m; sourceTree = "<group>"; };
+		713539841A5B038700249630 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		713539851A5B038700249630 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		716E304C1A559B0D0007B44C /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		716E304D1A559B0D0007B44C /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		716E30501A559B2D0007B44C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		71A7FF891A5B0A2400A10475 /* IOSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSRequest.h; sourceTree = "<group>"; };
+		71A7FF8A1A5B0A2400A10475 /* IOSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSRequest.m; sourceTree = "<group>"; };
 		71B48BCD1A51AFC600A37FF7 /* Sendish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sendish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B48BD11A51AFC600A37FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71B48BD21A51AFC600A37FF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -180,18 +195,10 @@
 		7102C21B1A580B7A0064D1FD /* Web Requests */ = {
 			isa = PBXGroup;
 			children = (
-				7102C21C1A580B7A0064D1FD /* IOS Requests */,
+				71A7FF881A5B0A2400A10475 /* IOS Requests */,
+				7135397F1A5AFA9600249630 /* User Account */,
 			);
 			path = "Web Requests";
-			sourceTree = "<group>";
-		};
-		7102C21C1A580B7A0064D1FD /* IOS Requests */ = {
-			isa = PBXGroup;
-			children = (
-				7102C21D1A580B7A0064D1FD /* IOSRequest.h */,
-				7102C21E1A580B7A0064D1FD /* IOSRequest.m */,
-			);
-			path = "IOS Requests";
 			sourceTree = "<group>";
 		};
 		7102C2201A580BCF0064D1FD /* Nickname Controller */ = {
@@ -217,8 +224,20 @@
 		7102C22C1A585D350064D1FD /* Tutorial Screens */ = {
 			isa = PBXGroup;
 			children = (
+				711F960C1A59101E00BF7A06 /* TutorialViewController.h */,
+				711F960D1A59101E00BF7A06 /* TutorialViewController.m */,
+				711F960E1A59101E00BF7A06 /* TutorialViewController.xib */,
 			);
 			path = "Tutorial Screens";
+			sourceTree = "<group>";
+		};
+		711F96111A59131400BF7A06 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				711F96121A59132100BF7A06 /* demoImage1.jpg */,
+				711F96131A59132100BF7A06 /* demoImage2.jpg */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		7126FFC51A52FCDE0004EADF /* Received Sendish Controller */ = {
@@ -254,6 +273,7 @@
 		7126FFE11A5315FF0004EADF /* Third Library */ = {
 			isa = PBXGroup;
 			children = (
+				713539831A5B038700249630 /* Base64 */,
 				7126FFE61A53161B0004EADF /* ALAssetsLibrary_CustomPhotoAlbum */,
 			);
 			path = "Third Library";
@@ -266,6 +286,24 @@
 				7126FFE81A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m */,
 			);
 			path = ALAssetsLibrary_CustomPhotoAlbum;
+			sourceTree = "<group>";
+		};
+		7135397F1A5AFA9600249630 /* User Account */ = {
+			isa = PBXGroup;
+			children = (
+				713539801A5AFB3300249630 /* UserAccount.h */,
+				713539811A5AFB3300249630 /* UserAccount.m */,
+			);
+			path = "User Account";
+			sourceTree = "<group>";
+		};
+		713539831A5B038700249630 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				713539841A5B038700249630 /* Base64.h */,
+				713539851A5B038700249630 /* Base64.m */,
+			);
+			path = Base64;
 			sourceTree = "<group>";
 		};
 		716E304B1A559AC40007B44C /* Alert View */ = {
@@ -285,6 +323,15 @@
 				7102C2121A5804B10064D1FD /* WebURLs.h */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		71A7FF881A5B0A2400A10475 /* IOS Requests */ = {
+			isa = PBXGroup;
+			children = (
+				71A7FF891A5B0A2400A10475 /* IOSRequest.h */,
+				71A7FF8A1A5B0A2400A10475 /* IOSRequest.m */,
+			);
+			path = "IOS Requests";
 			sourceTree = "<group>";
 		};
 		71B48BC41A51AFC500A37FF7 = {
@@ -316,6 +363,7 @@
 		71B48BCF1A51AFC600A37FF7 /* Sendish */ = {
 			isa = PBXGroup;
 			children = (
+				711F96111A59131400BF7A06 /* Assets */,
 				7102C21B1A580B7A0064D1FD /* Web Requests */,
 				716E304F1A559B1E0007B44C /* Constants */,
 				7126FFE11A5315FF0004EADF /* Third Library */,
@@ -567,12 +615,15 @@
 				71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */,
 				71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */,
 				71B48C091A51B77700A37FF7 /* SignupViewController.xib in Resources */,
+				711F96141A59132100BF7A06 /* demoImage1.jpg in Resources */,
 				7102C2181A58073D0064D1FD /* GetLcationViewController.xib in Resources */,
 				71B48C031A51B2E300A37FF7 /* RootViewController.xib in Resources */,
 				7102C22B1A5811890064D1FD /* ShareViewController.xib in Resources */,
 				71B48C1B1A51BD2400A37FF7 /* NavigationView.xib in Resources */,
 				7126FFD61A5303970004EADF /* TakeSendishViewController.xib in Resources */,
 				7126FFD01A52FE530004EADF /* SentSendishViewController.xib in Resources */,
+				711F96151A59132100BF7A06 /* demoImage2.jpg in Resources */,
+				711F96101A59101E00BF7A06 /* TutorialViewController.xib in Resources */,
 				7102C20F1A57E5290064D1FD /* loader.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,21 +677,24 @@
 			files = (
 				71B48BF91A51B05300A37FF7 /* AppDelegate.m in Sources */,
 				7126FFCF1A52FE530004EADF /* SentSendishViewController.m in Sources */,
+				711F960F1A59101E00BF7A06 /* TutorialViewController.m in Sources */,
 				7126FFE91A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
+				713539821A5AFB3300249630 /* UserAccount.m in Sources */,
 				71B48C191A51BD0E00A37FF7 /* NavigationView.m in Sources */,
 				71B48C141A51BADA00A37FF7 /* MainViewController.m in Sources */,
 				71B48BD31A51AFC600A37FF7 /* main.m in Sources */,
 				71B48C081A51B77700A37FF7 /* SignupViewController.m in Sources */,
+				713539861A5B038700249630 /* Base64.m in Sources */,
 				71B48C021A51B2E300A37FF7 /* RootViewController.m in Sources */,
 				7102C2241A580BE30064D1FD /* NickNameViewController.m in Sources */,
 				7102C2101A57E5290064D1FD /* LoaderView.m in Sources */,
-				7102C21F1A580B7A0064D1FD /* IOSRequest.m in Sources */,
 				7126FFC91A52FE2F0004EADF /* ReceivedSendishViewController.m in Sources */,
 				716E304E1A559B0D0007B44C /* AlertView.m in Sources */,
 				7126FFD51A5303970004EADF /* TakeSendishViewController.m in Sources */,
 				7102C2171A58073D0064D1FD /* GetLcationViewController.m in Sources */,
 				7102C22A1A5811890064D1FD /* ShareViewController.m in Sources */,
 				71B48C0E1A51B85300A37FF7 /* LoginViewController.m in Sources */,
+				71A7FF8B1A5B0A2400A10475 /* IOSRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,6 +811,11 @@
 			baseConfigurationReference = E26489F450B5373BAD32CBDD /* Pods-Sendish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sendish/Web",
+					"Requests/sendish-ios/Sendish/Classes/lib",
+				);
 				INFOPLIST_FILE = Sendish/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -774,6 +833,11 @@
 			baseConfigurationReference = 0CA270C94336AC9E84EABD58 /* Pods-Sendish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sendish/Web",
+					"Requests/sendish-ios/Sendish/Classes/lib",
+				);
 				INFOPLIST_FILE = Sendish/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

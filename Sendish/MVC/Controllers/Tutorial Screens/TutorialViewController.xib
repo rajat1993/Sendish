@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorialViewController">
+            <connections>
+                <outlet property="scrollViewObj" destination="eQl-oN-Zk9" id="Hyy-Zu-Mwc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eQl-oN-Zk9">
+                    <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-0P-ned">
+                    <rect key="frame" x="8" y="12" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="0lE-6c-SkI"/>
+                        <constraint firstAttribute="width" constant="46" id="3OJ-Pr-6rh"/>
+                    </constraints>
+                    <state key="normal" title="Done">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="Action_Done:" destination="-1" eventType="touchUpInside" id="H1I-iN-mN6"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="eQl-oN-Zk9" secondAttribute="centerY" constant="-25" id="0cB-hw-k7O"/>
+                <constraint firstAttribute="bottom" secondItem="eQl-oN-Zk9" secondAttribute="bottom" id="5gF-la-kCB"/>
+                <constraint firstAttribute="trailing" secondItem="eQl-oN-Zk9" secondAttribute="trailing" id="QgU-4l-4es"/>
+                <constraint firstItem="eQl-oN-Zk9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="c5n-c7-ETE"/>
+                <constraint firstItem="AnD-0P-ned" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="kQ4-bQ-xij"/>
+                <constraint firstItem="AnD-0P-ned" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="12" id="x2h-xC-DnQ"/>
+            </constraints>
+            <point key="canvasLocation" x="590" y="134"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

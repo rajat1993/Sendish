@@ -9,6 +9,10 @@
 #import "LoginViewController.h"
 #import <FacebookSDK.h>
 #import "Constants.h"
+#import "TutorialViewController.h"
+#import "GetLcationViewController.h"
+#import "UserAccount.h"
+#import "Base64.h"
 
 @interface LoginViewController ()
 
@@ -158,7 +162,36 @@
 
 - (IBAction)Action_Done:(id)sender
 {
-
+    UserAccount *userObj = [[UserAccount alloc] init];
+    
+    NSString *urlStr = [BasePath stringByAppendingString:Login];
+    
+    userObj.accountType = @"native";
+    NSString *basic = [[NSString stringWithFormat:@"%@:%@",self.TF_loginEmail.text, self.TF_loginPassword.text] base64EncodedString];
+    userObj.authToken = [NSString stringWithFormat:@"Basic %@",basic];
+    userObj.authHeader = @"Authorization";
+    
+    [IOSRequest fetchWebData:urlStr success:^(NSDictionary *responseDict) {
+                
+    } failure:^(NSError *error) {
+        
+    }];
+    
+//    if([[NSUserDefaults standardUserDefaults] valueForKey:@"first_login"] == nil)
+//    {
+//        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"first_login"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//        
+//        TutorialViewController *tutCtrlr = [[TutorialViewController alloc] initWithNibName:@"TutorialViewController" bundle:nil];
+//        [self.navigationController pushViewController:tutCtrlr animated:YES];
+//    }
+//    else
+//    {
+//        GetLcationViewController *locationCtrlr = [[GetLcationViewController alloc] initWithNibName:@"GetLcationViewController" bundle:nil];
+//        [self.navigationController pushViewController:locationCtrlr animated:YES];
+//    }
 }
+
+
 
 @end

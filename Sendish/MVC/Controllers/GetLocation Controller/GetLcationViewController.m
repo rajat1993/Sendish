@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +53,7 @@
     [self.Btn_getLocation setTitle:@"Please wait.." forState:UIControlStateNormal];
     
     self.locMgr = [[CLLocationManager alloc] init];
-    
+
     if([[[[UIDevice currentDevice] systemVersion] lastPathComponent] integerValue] >= 8)
     {
         [self.locMgr requestWhenInUseAuthorization];

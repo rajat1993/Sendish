@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NickNameViewController">
             <connections>
-                <outlet property="Action_getStarted" destination="f40-cd-TcQ" id="UPu-9Z-Nnq"/>
                 <outlet property="TF_nickName" destination="5Bb-zE-oDd" id="CAO-be-KKV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -7,12 +7,16 @@
 //
 
 #import "IOSRequest.h"
+#import "UserAccount.h"
 
 @implementation IOSRequest
 
 +(void)fetchWebData : (NSString *)url success: (void (^)(NSDictionary *responseDict))success failure: (void (^)(NSError *error))failure
 {
-    NSURLRequest *urlReq = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    UserAccount *userObj = [[UserAccount alloc] init];
+    
+    NSMutableURLRequest *urlReq = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [urlReq setValue:userObj.authToken forHTTPHeaderField:userObj.authHeader];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:urlReq];
 //    operation.responseSerializer = [AFHTTPResponseSerializer serializer];

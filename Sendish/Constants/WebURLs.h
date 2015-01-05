@@ -9,6 +9,8 @@
 #ifndef Sendish_WebURLs_h
 #define Sendish_WebURLs_h
 
-#define BasePath @"http://api.sendish.com"
+#define BasePath @"http://api.sendish.com/"
+
+#define Login @"api/v1.0/user-profile"
 
 #endif

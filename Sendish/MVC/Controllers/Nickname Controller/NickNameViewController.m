@@ -8,6 +8,7 @@
 
 #import "NickNameViewController.h"
 #import "Constants.h"
+#import "MainViewController.h"
 
 @interface NickNameViewController ()
 
@@ -37,6 +38,15 @@
 }
 */
 
+#pragma mark - Setter Methods
+
+#pragma mark - Touch Methods
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
 #pragma mark - Button Actions
 
 - (IBAction)Action_getStarted:(id)sender
@@ -49,9 +59,8 @@
         return;
     }
     
-    
-    
-    
+    MainViewController *mainCtrlr = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    [self.navigationController pushViewController:mainCtrlr animated:YES];
 }
 
 @end
