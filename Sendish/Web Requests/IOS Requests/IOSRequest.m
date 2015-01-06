@@ -79,14 +79,24 @@
 +(void)postRequest : (NSString *)url parameters:(NSDictionary *)dparameters  success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure
 
 {
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:z]];
+//    [request setCachePolicy:NSURLCacheStorageNotAllowed];
+//    NSString *body = [params JSONRepresentation];
+//    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+//    [request setHTTPMethod:@"POST"];
+//    return [JFDownload performRequest:request withFinishTarget:target andFinishSelector:selector startImmediately:YES];
+
     
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:url]];
     
-    
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     manager.responseSerializer =  [AFHTTPResponseSerializer serializer];
     
-    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     AFHTTPRequestOperation *op = [manager POST:url parameters:dparameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
@@ -151,6 +161,67 @@
     
     [op start];
 }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
++(void)uploadData1 : (NSString *)url parameters:(NSDictionary *)dparameters videoData:(NSData *)dVideoData  success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    AFHTTPRequestOperation *op = [manager POST:url parameters:dparameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        //do not put image inside parameters dictionary as I did, but append it!
+        
+        [formData appendPartWithFileData:dVideoData name:@"video" fileName:@"userRegistration" mimeType:@"text/plain"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        success(responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        failure(error);
+    }];
+    //op.responseSerializer = [AFHTTPResponseSerializer serializer];
+    op.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [op start];
+}
+
+
++(void)testMethod : (NSString *)url andParmas : (NSDictionary *)params success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+  //  [request setTimeoutInterval:600];
+    [request setHTTPMethod:@"POST"];
+//    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)executionsData.length] forHTTPHeaderField:@"Content-Length"];
+    
+    NSError *error = nil;
+    NSData *executionsData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:&error];
+
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:executionsData];
+//    [request setValue:[self userAgent] forHTTPHeaderField:@"User-Agent"];
+    
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary* resultsDict   = (NSDictionary*)responseObject;
+        NSLog(@"%@", resultsDict);
+        //process result json dictionary
+        
+        //success
+        success([NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil]);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //failure
+        NSLog(@"Error:%@",error);
+        failure(error);
+    }];
+
+    [op start];
+}
+
 
 
 @end

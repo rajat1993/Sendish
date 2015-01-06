@@ -194,6 +194,20 @@
 
 - (IBAction)Action_Next:(id)sender
 {
+    NSString *urlStr = [BasePath stringByAppendingString:Register];
+    
+    NSDictionary *params = @{@"email" : self.TF_email.text, @"nickname" : @"", @"password" : self.TF_password.text, @"repeatPassword" : self.TF_password.text};
+
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+
+    
+    [IOSRequest testMethod:urlStr andParmas:params success:^(NSDictionary *responseStr) {
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
     
 }
 

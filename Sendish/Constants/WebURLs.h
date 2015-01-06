@@ -12,5 +12,7 @@
 #define BasePath @"http://api.sendish.com/"
 
 #define Login @"api/v1.0/user-profile"
+#define Register @"api/v1.0/registration"
 
 #endif
+
