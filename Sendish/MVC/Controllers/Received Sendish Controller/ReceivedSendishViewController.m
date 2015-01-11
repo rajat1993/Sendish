@@ -8,8 +8,11 @@
 
 #import "ReceivedSendishViewController.h"
 #import "NavigationView.h"
+#import "ReceivedSendishTableViewCell.h"
+#import <UIViewController+REFrostedViewController.h>
+#import <REFrostedViewController.h>
 
-@interface ReceivedSendishViewController ()
+@interface ReceivedSendishViewController () <NavigationDelegate>
 
 @property NavigationView *navViewObj;
 
@@ -33,6 +36,8 @@
     [self.view layoutIfNeeded];
     
     [self setupView];
+    [self setNavigationDelegates];
+    [self reloadTableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,6 +62,97 @@
     self.navViewObj = [[NavigationView alloc] initWithFrame:self.navigationView.frame];
     
     [self.navigationView addSubview:self.navViewObj];
+}
+
+#pragma mark - Custom Delegate Methods
+
+-(void)setNavigationDelegates
+{
+    self.navViewObj.delegate = self;
+}
+
+-(void)BtnSidePanel
+{
+    [self showMenu];
+}
+
+#pragma mark - Side Panel Setup
+
+- (void)showMenu
+{
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+}
+
+#pragma mark - TableView Methods
+
+-(void)reloadTableView
+{
+    [self.tableViewObj setDataSource:self];
+    [self.tableViewObj setDelegate:self];
+    [self.tableViewObj reloadData];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ReceivedSendishTableViewCell *receivedSendishCell = (ReceivedSendishTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"receivedSendihCell"];
+    
+    if (receivedSendishCell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ReceivedSendishTableViewCell" owner:self options:nil];
+        receivedSendishCell = [nib objectAtIndex:0];
+    }
+    
+    return receivedSendishCell;
+}
+
+//-(NSString *)tableView:(UITableView *)tableView titleForSwipeAccessoryButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return @"Share";
+//}
+//
+//-(void)tableView:(UITableView *)tableView swipeAccessoryButtonPushedForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//}
+//
+//-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return YES;
+//}
+//
+//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (editingStyle == UITableViewCellEditingStyleDelete)
+//    {
+//        
+//    }
+//}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
 }
 
 @end

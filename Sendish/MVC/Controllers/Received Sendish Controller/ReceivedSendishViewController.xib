@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReceivedSendishViewController">
             <connections>
                 <outlet property="navigationView" destination="oMW-iJ-K2V" id="7l0-pU-GKu"/>
+                <outlet property="tableViewObj" destination="Jzg-mi-R5M" id="95Z-am-dvl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,12 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Received Sendish" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOu-Ix-Lmg">
-                    <rect key="frame" x="86" y="132" width="148" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMW-iJ-K2V">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -28,12 +23,20 @@
                         <constraint firstAttribute="height" constant="64" id="48v-k1-OmV"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jzg-mi-R5M">
+                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="oMW-iJ-K2V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lfl-Kj-r0w"/>
+                <constraint firstAttribute="bottom" secondItem="Jzg-mi-R5M" secondAttribute="bottom" id="PGX-M0-8XS"/>
                 <constraint firstAttribute="trailing" secondItem="oMW-iJ-K2V" secondAttribute="trailing" id="Vbt-2z-h03"/>
                 <constraint firstItem="oMW-iJ-K2V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XgI-CG-G8Q"/>
+                <constraint firstItem="Jzg-mi-R5M" firstAttribute="top" secondItem="oMW-iJ-K2V" secondAttribute="bottom" id="baS-7K-Xim"/>
+                <constraint firstAttribute="trailing" secondItem="Jzg-mi-R5M" secondAttribute="trailing" id="hiG-0m-pSg"/>
+                <constraint firstItem="Jzg-mi-R5M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t1A-Pj-J4r"/>
             </constraints>
             <point key="canvasLocation" x="227" y="312"/>
         </view>

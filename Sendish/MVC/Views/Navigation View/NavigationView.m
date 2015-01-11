@@ -32,4 +32,11 @@
 }
 */
 
+#pragma mark - Button Actions
+
+- (IBAction)Action_sidePanel:(id)sender
+{
+    [self.delegate BtnSidePanel];
+}
+
 @end

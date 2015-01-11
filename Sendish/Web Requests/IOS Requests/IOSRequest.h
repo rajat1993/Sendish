@@ -13,18 +13,6 @@
 
 +(void)fetchWebData : (NSString *)url success: (void (^)(NSDictionary *responseDict))success failure: (void (^)(NSError *error))failure;
 
-+(void)uploadData : (NSString *)url parameters:(NSDictionary *)dparameters imageData:(NSData *)dimageData  success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure ;
-
-+(void)uploadData : (NSString *)url parameters:(NSDictionary *)dparameters videoData:(NSData *)dVideoData  success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure;
-
-+(void)postRequest : (NSString *)url parameters:(NSDictionary *)dparameters  success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure;
-
-+(void)uploadData : (NSString *)url parameters:(NSDictionary *)dparameters imageData:(NSArray *)imageArr videoData:(NSArray *)videoArr success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure;
-
-+(void)uploadData1 : (NSString *)url parameters:(NSDictionary *)dparameters videoData:(NSData *)dVideoData  success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure;
-
-
-
-+(void)testMethod : (NSString *)url andParmas : (NSDictionary *)params success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure;
++(void)postRequestForregister : (NSString *)url andParmas : (NSDictionary *)params success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure;
 
 @end

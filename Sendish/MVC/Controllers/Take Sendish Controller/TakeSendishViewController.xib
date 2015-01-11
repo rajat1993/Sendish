@@ -7,7 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TakeSendishViewController">
             <connections>
+                <outlet property="Btn_description" destination="e46-YS-uSY" id="nxA-r7-PMF"/>
                 <outlet property="Btn_flash" destination="TxG-zG-n1W" id="utu-jt-CJu"/>
+                <outlet property="Btn_rotateCamera" destination="4Ca-lu-1Ji" id="dvS-MF-ahA"/>
+                <outlet property="Btn_takePhoto" destination="JAC-2H-Sfi" id="te9-5y-wnb"/>
                 <outlet property="cameraView" destination="7p0-Ww-Ask" id="vh5-Ru-Xn0"/>
                 <outlet property="flashView" destination="6OT-f8-bMP" id="gqS-pR-bwh"/>
                 <outlet property="imgView_captured" destination="sgl-tH-PTs" id="fdJ-4f-n1u"/>
@@ -124,6 +127,16 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
+                        <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e46-YS-uSY">
+                            <rect key="frame" x="22" y="8" width="276" height="30"/>
+                            <state key="normal" title="Tap to add description">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="Action_description:" destination="-1" eventType="touchUpInside" id="MzJ-DT-UjN"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.027450980392156862" green="0.011764705882352941" blue="0.0" alpha="0.83000000000000007" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -151,7 +164,7 @@
                 <constraint firstItem="7wI-g5-Zou" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uez-oG-3h7"/>
                 <constraint firstItem="7p0-Ww-Ask" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uug-Hm-t6R"/>
             </constraints>
-            <point key="canvasLocation" x="516" y="287"/>
+            <point key="canvasLocation" x="469" y="286"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

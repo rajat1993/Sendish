@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -35,14 +36,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="eQl-oN-Zk9" secondAttribute="centerY" constant="-25" id="0cB-hw-k7O"/>
                 <constraint firstAttribute="bottom" secondItem="eQl-oN-Zk9" secondAttribute="bottom" id="5gF-la-kCB"/>
+                <constraint firstItem="eQl-oN-Zk9" firstAttribute="top" secondItem="AnD-0P-ned" secondAttribute="bottom" constant="8" id="736-wA-uai"/>
                 <constraint firstAttribute="trailing" secondItem="eQl-oN-Zk9" secondAttribute="trailing" id="QgU-4l-4es"/>
                 <constraint firstItem="eQl-oN-Zk9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="c5n-c7-ETE"/>
                 <constraint firstItem="AnD-0P-ned" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="kQ4-bQ-xij"/>
                 <constraint firstItem="AnD-0P-ned" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="12" id="x2h-xC-DnQ"/>
             </constraints>
-            <point key="canvasLocation" x="590" y="134"/>
+            <point key="canvasLocation" x="507" y="134"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

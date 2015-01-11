@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReceivedSendishViewController : UIViewController
+@interface ReceivedSendishViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *navigationView;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewObj;
+
 @end

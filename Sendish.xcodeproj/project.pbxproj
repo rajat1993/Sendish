@@ -36,8 +36,12 @@
 		7126FFEB1A53184C0004EADF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126FFEA1A53184C0004EADF /* AssetsLibrary.framework */; };
 		713539821A5AFB3300249630 /* UserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 713539811A5AFB3300249630 /* UserAccount.m */; };
 		713539861A5B038700249630 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 713539851A5B038700249630 /* Base64.m */; };
+		715841511A6049BB006AA95B /* SidePanelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7158414F1A6049BB006AA95B /* SidePanelTableViewCell.m */; };
+		715841521A6049BB006AA95B /* SidePanelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715841501A6049BB006AA95B /* SidePanelTableViewCell.xib */; };
 		716E304E1A559B0D0007B44C /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E304D1A559B0D0007B44C /* AlertView.m */; };
 		71A7FF8B1A5B0A2400A10475 /* IOSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7FF8A1A5B0A2400A10475 /* IOSRequest.m */; };
+		71AAF3701A5DAE310028B0B3 /* SidePanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AAF36E1A5DAE310028B0B3 /* SidePanelViewController.m */; };
+		71AAF3711A5DAE310028B0B3 /* SidePanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71AAF36F1A5DAE310028B0B3 /* SidePanelViewController.xib */; };
 		71B48BD31A51AFC600A37FF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BD21A51AFC600A37FF7 /* main.m */; };
 		71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDD1A51AFC600A37FF7 /* Images.xcassets */; };
 		71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDF1A51AFC600A37FF7 /* LaunchScreen.xib */; };
@@ -53,6 +57,8 @@
 		71B48C151A51BADA00A37FF7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48C131A51BADA00A37FF7 /* MainViewController.xib */; };
 		71B48C191A51BD0E00A37FF7 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48C181A51BD0E00A37FF7 /* NavigationView.m */; };
 		71B48C1B1A51BD2400A37FF7 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48C1A1A51BD2400A37FF7 /* NavigationView.xib */; };
+		71FE62FD1A628D9200725FC0 /* ReceivedSendishTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE62FB1A628D9200725FC0 /* ReceivedSendishTableViewCell.m */; };
+		71FE62FE1A628D9200725FC0 /* ReceivedSendishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FE62FC1A628D9200725FC0 /* ReceivedSendishTableViewCell.xib */; };
 		E17C5A4207717D5F733C3EAF /* libPods-Sendish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1E61305469F857C3AD02C /* libPods-Sendish.a */; };
 /* End PBXBuildFile section */
 
@@ -111,11 +117,17 @@
 		713539811A5AFB3300249630 /* UserAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAccount.m; sourceTree = "<group>"; };
 		713539841A5B038700249630 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		713539851A5B038700249630 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		7158414E1A6049BB006AA95B /* SidePanelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidePanelTableViewCell.h; sourceTree = "<group>"; };
+		7158414F1A6049BB006AA95B /* SidePanelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidePanelTableViewCell.m; sourceTree = "<group>"; };
+		715841501A6049BB006AA95B /* SidePanelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidePanelTableViewCell.xib; sourceTree = "<group>"; };
 		716E304C1A559B0D0007B44C /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		716E304D1A559B0D0007B44C /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		716E30501A559B2D0007B44C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		71A7FF891A5B0A2400A10475 /* IOSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSRequest.h; sourceTree = "<group>"; };
 		71A7FF8A1A5B0A2400A10475 /* IOSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSRequest.m; sourceTree = "<group>"; };
+		71AAF36D1A5DAE310028B0B3 /* SidePanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidePanelViewController.h; sourceTree = "<group>"; };
+		71AAF36E1A5DAE310028B0B3 /* SidePanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidePanelViewController.m; sourceTree = "<group>"; };
+		71AAF36F1A5DAE310028B0B3 /* SidePanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidePanelViewController.xib; sourceTree = "<group>"; };
 		71B48BCD1A51AFC600A37FF7 /* Sendish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sendish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B48BD11A51AFC600A37FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71B48BD21A51AFC600A37FF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -141,6 +153,9 @@
 		71B48C171A51BD0E00A37FF7 /* NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationView.h; sourceTree = "<group>"; };
 		71B48C181A51BD0E00A37FF7 /* NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
 		71B48C1A1A51BD2400A37FF7 /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
+		71FE62FA1A628D9200725FC0 /* ReceivedSendishTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedSendishTableViewCell.h; sourceTree = "<group>"; };
+		71FE62FB1A628D9200725FC0 /* ReceivedSendishTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedSendishTableViewCell.m; sourceTree = "<group>"; };
+		71FE62FC1A628D9200725FC0 /* ReceivedSendishTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceivedSendishTableViewCell.xib; sourceTree = "<group>"; };
 		CBA1E61305469F857C3AD02C /* libPods-Sendish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sendish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26489F450B5373BAD32CBDD /* Pods-Sendish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sendish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sendish/Pods-Sendish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -306,6 +321,25 @@
 			path = Base64;
 			sourceTree = "<group>";
 		};
+		7158414C1A604962006AA95B /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				71FE62F91A628D9200725FC0 /* Received Sendish Cell */,
+				7158414D1A6049A4006AA95B /* SidePanel Cell */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		7158414D1A6049A4006AA95B /* SidePanel Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7158414E1A6049BB006AA95B /* SidePanelTableViewCell.h */,
+				7158414F1A6049BB006AA95B /* SidePanelTableViewCell.m */,
+				715841501A6049BB006AA95B /* SidePanelTableViewCell.xib */,
+			);
+			path = "SidePanel Cell";
+			sourceTree = "<group>";
+		};
 		716E304B1A559AC40007B44C /* Alert View */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +366,16 @@
 				71A7FF8A1A5B0A2400A10475 /* IOSRequest.m */,
 			);
 			path = "IOS Requests";
+			sourceTree = "<group>";
+		};
+		71AAF36C1A5DAE1B0028B0B3 /* SidePanel Controller */ = {
+			isa = PBXGroup;
+			children = (
+				71AAF36D1A5DAE310028B0B3 /* SidePanelViewController.h */,
+				71AAF36E1A5DAE310028B0B3 /* SidePanelViewController.m */,
+				71AAF36F1A5DAE310028B0B3 /* SidePanelViewController.xib */,
+			);
+			path = "SidePanel Controller";
 			sourceTree = "<group>";
 		};
 		71B48BC41A51AFC500A37FF7 = {
@@ -431,6 +475,7 @@
 		71B48BFC1A51B19500A37FF7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7158414C1A604962006AA95B /* Custom Cells */,
 				7102C20A1A57E5290064D1FD /* LoaderView */,
 				716E304B1A559AC40007B44C /* Alert View */,
 				71B48C161A51BB1100A37FF7 /* Navigation View */,
@@ -441,6 +486,7 @@
 		71B48BFD1A51B1A100A37FF7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				71AAF36C1A5DAE1B0028B0B3 /* SidePanel Controller */,
 				7102C22C1A585D350064D1FD /* Tutorial Screens */,
 				7102C2261A58117F0064D1FD /* Share Controller */,
 				7102C2201A580BCF0064D1FD /* Nickname Controller */,
@@ -504,6 +550,16 @@
 				71B48C1A1A51BD2400A37FF7 /* NavigationView.xib */,
 			);
 			path = "Navigation View";
+			sourceTree = "<group>";
+		};
+		71FE62F91A628D9200725FC0 /* Received Sendish Cell */ = {
+			isa = PBXGroup;
+			children = (
+				71FE62FA1A628D9200725FC0 /* ReceivedSendishTableViewCell.h */,
+				71FE62FB1A628D9200725FC0 /* ReceivedSendishTableViewCell.m */,
+				71FE62FC1A628D9200725FC0 /* ReceivedSendishTableViewCell.xib */,
+			);
+			path = "Received Sendish Cell";
 			sourceTree = "<group>";
 		};
 		BD43364F1DC66019585F7F03 /* Pods */ = {
@@ -576,6 +632,7 @@
 				TargetAttributes = {
 					71B48BCC1A51AFC500A37FF7 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = D39HJ7PPHN;
 					};
 					71B48BE51A51AFC600A37FF7 = {
 						CreatedOnToolsVersion = 6.0;
@@ -607,6 +664,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AAF3711A5DAE310028B0B3 /* SidePanelViewController.xib in Resources */,
 				71B48C0F1A51B85300A37FF7 /* LoginViewController.xib in Resources */,
 				7102C2111A57E5290064D1FD /* LoaderView.xib in Resources */,
 				71B48C151A51BADA00A37FF7 /* MainViewController.xib in Resources */,
@@ -617,12 +675,14 @@
 				71B48C091A51B77700A37FF7 /* SignupViewController.xib in Resources */,
 				711F96141A59132100BF7A06 /* demoImage1.jpg in Resources */,
 				7102C2181A58073D0064D1FD /* GetLcationViewController.xib in Resources */,
+				715841521A6049BB006AA95B /* SidePanelTableViewCell.xib in Resources */,
 				71B48C031A51B2E300A37FF7 /* RootViewController.xib in Resources */,
 				7102C22B1A5811890064D1FD /* ShareViewController.xib in Resources */,
 				71B48C1B1A51BD2400A37FF7 /* NavigationView.xib in Resources */,
 				7126FFD61A5303970004EADF /* TakeSendishViewController.xib in Resources */,
 				7126FFD01A52FE530004EADF /* SentSendishViewController.xib in Resources */,
 				711F96151A59132100BF7A06 /* demoImage2.jpg in Resources */,
+				71FE62FE1A628D9200725FC0 /* ReceivedSendishTableViewCell.xib in Resources */,
 				711F96101A59101E00BF7A06 /* TutorialViewController.xib in Resources */,
 				7102C20F1A57E5290064D1FD /* loader.png in Resources */,
 			);
@@ -676,6 +736,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71B48BF91A51B05300A37FF7 /* AppDelegate.m in Sources */,
+				71FE62FD1A628D9200725FC0 /* ReceivedSendishTableViewCell.m in Sources */,
 				7126FFCF1A52FE530004EADF /* SentSendishViewController.m in Sources */,
 				711F960F1A59101E00BF7A06 /* TutorialViewController.m in Sources */,
 				7126FFE91A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
@@ -684,7 +745,9 @@
 				71B48C141A51BADA00A37FF7 /* MainViewController.m in Sources */,
 				71B48BD31A51AFC600A37FF7 /* main.m in Sources */,
 				71B48C081A51B77700A37FF7 /* SignupViewController.m in Sources */,
+				71AAF3701A5DAE310028B0B3 /* SidePanelViewController.m in Sources */,
 				713539861A5B038700249630 /* Base64.m in Sources */,
+				715841511A6049BB006AA95B /* SidePanelTableViewCell.m in Sources */,
 				71B48C021A51B2E300A37FF7 /* RootViewController.m in Sources */,
 				7102C2241A580BE30064D1FD /* NickNameViewController.m in Sources */,
 				7102C2101A57E5290064D1FD /* LoaderView.m in Sources */,
@@ -765,6 +828,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "8c37cca6-3c13-42d6-b159-fed4553a88d0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -800,6 +864,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "8c37cca6-3c13-42d6-b159-fed4553a88d0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -811,6 +876,8 @@
 			baseConfigurationReference = E26489F450B5373BAD32CBDD /* Pods-Sendish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sendish/Web",
@@ -824,6 +891,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8c37cca6-3c13-42d6-b159-fed4553a88d0";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -833,6 +901,8 @@
 			baseConfigurationReference = 0CA270C94336AC9E84EABD58 /* Pods-Sendish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sendish/Web",
@@ -846,6 +916,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8c37cca6-3c13-42d6-b159-fed4553a88d0";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

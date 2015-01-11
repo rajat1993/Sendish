@@ -10,10 +10,15 @@
 
 @interface UserAccount : NSObject
 
++(UserAccount *)sharedInstance;
+
 @property (nonatomic,strong) NSString *authToken;
 @property (nonatomic,strong) NSString *authHeader;
 @property (nonatomic,strong) NSString *accountType;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *imageUrl;
+@property (nonatomic,strong) NSString *nickName;
+
+-(void)invalidate;
 
 @end

@@ -32,7 +32,6 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navigationController.navigationBarHidden = YES;
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -41,12 +40,18 @@
     
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
     [self performSelectorOnMainThread:@selector(setupCameraView) withObject:nil waitUntilDone:NO];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
+    [self.previewLayer removeFromSuperlayer];
     [self.session stopRunning];
     self.session = nil;
 }
@@ -73,7 +78,7 @@
     self.session = [[AVCaptureSession alloc] init];
     self.session.sessionPreset = AVCaptureSessionPresetPhoto;
     
-    self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
+    self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
     
     self.previewLayer.frame = self.cameraView.bounds;
     
@@ -92,23 +97,45 @@
     }
     
     [self.session addInput:input];
-    
+
     self.stillImageOutput = [[AVCaptureStillImageOutput alloc]init];
     NSDictionary *outputSettings = @{AVVideoCodecKey : AVVideoCodecJPEG};
     [self.stillImageOutput setOutputSettings:outputSettings];
     
     [self.session addOutput:self.stillImageOutput];
-
+    
     [self.session startRunning];
 }
 
+#pragma mark - Alert Delegate Methods
+
+-(BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
+{
+    if ([[[alertView textFieldAtIndex:0] text] length] == 0)
+    {
+        return NO;
+    }
+    
+    return YES;
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        [self.Btn_description setTitle:[[alertView textFieldAtIndex:0] text] forState:UIControlStateNormal];
+    }
+}
 
 #pragma mark - Button Actions
 
 - (IBAction)Action_toggleFlash:(id)sender
 {
+    self.alertObj = [[AlertView alloc] init];
+    
     if(![self.device hasFlash])
     {
+        [self.alertObj showStaticAlertWithTitle:@"" AndMessage:@"Flash not available"];
         return;
     }
     
@@ -126,99 +153,129 @@
 {
     self.alertObj = [[AlertView alloc] init];
     
-    if(self.cameraView.hidden == YES)
+    if ([[self.Btn_takePhoto.titleLabel.text lowercaseString] isEqualToString:@"send"])
     {
-        self.cameraView.hidden = NO;
-        self.imgView_captured.hidden = YES;
+        
     }
     else
     {
-        AVCaptureConnection *stillImageConnection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
-        
-        [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:stillImageConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+        if(self.cameraView.hidden == YES)
+        {
+            self.cameraView.hidden = NO;
+            self.imgView_captured.hidden = YES;
+        }
+        else
+        {
+            AVCaptureConnection *stillImageConnection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
             
-            if (imageDataSampleBuffer != NULL) {
-                NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+            [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:stillImageConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
                 
-                UIImage *captureImage = [[UIImage alloc] initWithData:imageData];
-                
-                self.imgView_captured.image = captureImage;
-                
-                [self.cameraView setHidden:YES];
-                [self.imgView_captured setHidden:NO];
-                
-                ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-                
-                [library saveImage:captureImage toAlbum:@"SENDISH" withCompletionBlock:^(NSError *error) {
+                if (imageDataSampleBuffer != NULL) {
+                    NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
                     
-                    if(error)
-                    {
-                        [self.alertObj showStaticAlertWithTitle:@"" AndMessage:@"Unable to save photo at this time.\nPlease try again later."];
-                    }
-                }];
-            }
+                    UIImage *captureImage = [[UIImage alloc] initWithData:imageData];
+                    
+                    self.imgView_captured.image = captureImage;
+                    
+                    [self.cameraView setHidden:YES];
+                    [self.imgView_captured setHidden:NO];
+                    
+                    [self.Btn_description setHidden:NO];
+                    [self.Btn_flash setHidden:YES];
+                    [self.flashView setHidden:YES];
+                    
+                    [self.Btn_rotateCamera setTitle:@"Cancel" forState:UIControlStateNormal];
+                    [self.Btn_takePhoto setTitle:@"Send" forState:UIControlStateNormal];
+                    
+                    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+                    
+                    [library saveImage:captureImage toAlbum:@"SENDISH" withCompletionBlock:^(NSError *error) {
+                        
+                        if(error)
+                        {
+                            [self.alertObj showStaticAlertWithTitle:@"" AndMessage:@"Unable to save photo at this time.\nPlease try again later."];
+                        }
+                    }];
+                }
+                
+            }];
             
-        }];
+        }
 
     }
 }
 
 - (IBAction)Action_rotateCamera:(id)sender
 {
-    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    
-    if([devices count] <= 1)
+    if ([[self.Btn_rotateCamera.titleLabel.text lowercaseString] isEqualToString:@"cancel"])
     {
-        return;
-    }
-    
-    NSArray *possibleDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    for (AVCaptureDeviceInput *input in [self.session inputs])
-    {
-        [self.session removeInput:input];
-    }
-    
-//    CATransition *animation = [CATransition animation];
-//    animation.duration = .75f;
-//    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-//    animation.type = @"oglFlip";
-//    animation.delegate = self;
-    
-    NSError *error = nil;
-    
-    // Set torch to on
-    if([self.device position] == AVCaptureDevicePositionBack)
-    {
+        self.cameraView.hidden = NO;
+        [self.Btn_flash setHidden:NO];
         
-//        animation.subtype = kCATransitionFromLeft;
-
-        self.device = [possibleDevices objectAtIndex:1];
+        [self.Btn_takePhoto setTitle:@"Take" forState:UIControlStateNormal];
+        [self.Btn_rotateCamera setTitle:@"Rotate" forState:UIControlStateNormal];
         
-        AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
-        if (!input) {
-            // Handle the error appropriately.
-            NSLog(@"ERROR: trying to open camera: %@", error);
-        }
-        
-        [self.session addInput:input];
-
+        self.imgView_captured.hidden = YES;
+        [self.Btn_description setHidden:YES];
     }
     else
     {
-//        animation.subtype = kCATransitionFromRight;
-
-        self.device = [possibleDevices objectAtIndex:0];
+        NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
         
-        AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
-        if (!input) {
-            // Handle the error appropriately.
-            NSLog(@"ERROR: trying to open camera: %@", error);
+        if([devices count] <= 1)
+        {
+            return;
         }
         
-        [self.session addInput:input];
+        NSArray *possibleDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+        for (AVCaptureDeviceInput *input in [self.session inputs])
+        {
+            [self.session removeInput:input];
+        }
+        
+        //    CATransition *animation = [CATransition animation];
+        //    animation.duration = .75f;
+        //    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        //    animation.type = @"oglFlip";
+        //    animation.delegate = self;
+        
+        NSError *error = nil;
+        
+        // Set torch to on
+        if([self.device position] == AVCaptureDevicePositionBack)
+        {
+            
+            //        animation.subtype = kCATransitionFromLeft;
+            
+            self.device = [possibleDevices objectAtIndex:1];
+            
+            AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
+            if (!input) {
+                // Handle the error appropriately.
+                NSLog(@"ERROR: trying to open camera: %@", error);
+            }
+            
+            [self.session addInput:input];
+            
+        }
+        else
+        {
+            //        animation.subtype = kCATransitionFromRight;
+            
+            self.device = [possibleDevices objectAtIndex:0];
+            
+            AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
+            if (!input) {
+                // Handle the error appropriately.
+                NSLog(@"ERROR: trying to open camera: %@", error);
+            }
+            
+            [self.session addInput:input];
+        }
+        
+        //    [self.previewLayer addAnimation:animation forKey:nil];
+
     }
-    
-//    [self.previewLayer addAnimation:animation forKey:nil];
 
 }
 
@@ -253,6 +310,13 @@
     [self setFlashModeTo:@"AUTO"];
 }
 
+- (IBAction)Action_description:(id)sender
+{
+    UIAlertView *alert_description = [[UIAlertView alloc] initWithTitle:@"" message:@"Enter a short description for this sendish." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done", nil];
+    [alert_description setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [alert_description show];
+}
+
 #pragma mark - Flash Methods
 
 -(void)setFlashModeTo : (NSString *)mode
@@ -278,7 +342,6 @@
     
     [self.Btn_flash setTitle:mode forState:UIControlStateNormal];
     [self.flashView setHidden:YES];
-
 }
 
 #pragma mark - Transition Methods

@@ -9,9 +9,7 @@
 #import "MainViewController.h"
 #import "NavigationView.h"
 
-@interface MainViewController ()
-
-@property NavigationView *navViewObj;
+@interface MainViewController () 
 
 @end
 
@@ -58,8 +56,6 @@
 
 -(void)setupView
 {
-    self.navViewObj = [[NavigationView alloc] initWithFrame:self.navigationView.frame];
-    
     self.pageViewCtrlr = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewCtrlr.dataSource = self;
     self.pageViewCtrlr.delegate = self;
@@ -71,8 +67,6 @@
     
     [self addChildViewController:self.pageViewCtrlr];
     [self.view addSubview:self.pageViewCtrlr.view];
-    
-    [self.navigationView addSubview:self.navViewObj];
 }
 
 -(void)setupPages
@@ -84,7 +78,6 @@
     self.sentCtrlr = [[SentSendishViewController alloc] initWithNibName:@"SentSendishViewController" bundle:nil];
     
     self.pages = @[self.receivedCtrlr, self.takeSendishCtrlr, self.sentCtrlr];
-
 }
 
 #pragma mark - Page Controller Methods
@@ -108,7 +101,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    if(nil == viewController)
+    if(nil == viewController)  
     {
         return self.pages[0];
     }
@@ -122,6 +115,41 @@
     return self.pages[i-1];
 }
 
+#pragma mark - SidePanel Actions
 
+-(void)showLeaderBoard
+{
+    
+}
+
+-(void)showInbox
+{
+    
+}
+
+-(void)showTakeSendish
+{
+    
+}
+
+-(void)showMySendish
+{
+    
+}
+
+-(void)showReceivedSendish
+{
+    
+}
+
+-(void)showNotifications
+{
+    
+}
+
+-(void)showSettings
+{
+    
+}
 
 @end

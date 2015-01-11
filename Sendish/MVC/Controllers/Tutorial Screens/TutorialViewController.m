@@ -68,7 +68,7 @@
     [self.scrollViewObj addSubview:imgView];
     [self.scrollViewObj addSubview:imgView2];
     
-    [self.scrollViewObj setContentSize:CGSizeMake(CGRectGetMaxX(imgView2.frame), self.scrollViewObj.frame.size.height)];
+    [self.scrollViewObj setContentSize:CGSizeMake(CGRectGetMaxX(imgView2.frame), self.scrollViewObj.frame.size.height - self.scrollViewObj.frame.origin.y)];
 }
 
 #pragma mark - Button Actions

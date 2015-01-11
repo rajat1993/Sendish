@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Sendish-REFrostedViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Sendish-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09BC650278F5AA304D10E364</key>
+		<key>10539038D35F658082440E4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5CEAEFCA9EC1AE6F4138CE0A</key>
+		<key>1C2E5B0E31F6693FAEF619E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>76F9ED1A01A81F30184BF2A0</key>
+		<key>8F54A830879182B78A3F731D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9CF8A340B8D7028BBFD83068</key>
+		<key>A26D33B19A5DE0E00FBECAE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E5A342217FCFE4DA0E719169</key>
+		<key>C3739A52F87F2EE40E34A562</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D14531866147F557FBDC44CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

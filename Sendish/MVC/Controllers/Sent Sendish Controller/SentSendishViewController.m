@@ -8,8 +8,10 @@
 
 #import "SentSendishViewController.h"
 #import "NavigationView.h"
+#import <UIViewController+REFrostedViewController.h>
+#import <REFrostedViewController.h>
 
-@interface SentSendishViewController ()
+@interface SentSendishViewController () <NavigationDelegate>
 
 @property NavigationView *navViewObj;
 
@@ -33,6 +35,7 @@
     [self.view layoutIfNeeded];
     
     [self setupView];
+    [self setNavigationDelegates];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,5 +61,32 @@
     
     [self.navigationView addSubview:self.navViewObj];
 }
+
+#pragma mark - Custom Delegate Methods
+
+-(void)setNavigationDelegates
+{
+    self.navViewObj.delegate = self;
+}
+
+-(void)BtnSidePanel
+{
+    [self showMenu];
+}
+
+#pragma mark - Side Panel Setup
+
+- (void)showMenu
+{
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+}
+
 
 @end

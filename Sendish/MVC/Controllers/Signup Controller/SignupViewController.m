@@ -8,17 +8,31 @@
 
 #import "SignupViewController.h"
 #import "Constants.h"
+#import "UserAccount.h"
 
 @interface SignupViewController ()
 
+@property int success;
+
 @property AlertView *alertObj;
 @property LoaderView *loaderObj;
+
+@property(nonatomic,strong) NSURLConnection *urlConn ;
+@property(nonatomic,retain)NSMutableData *mutData;
 
 @end
 
 @implementation SignupViewController
 
 #pragma mark - Internal Methods
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserDetails:) name:@"fb_session_open" object:nil];
+}
 
 - (void)viewDidLoad
 {
@@ -45,6 +59,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Handle Notifications
+
+-(void)getUserDetails : (NSNotification *)notification
+{
+    [self makeRequestForUserData];
+}
 
 #pragma mark - Setter Methods
 
@@ -127,6 +148,8 @@
 
 -(void)makeRequestForUserData
 {
+    self.alertObj = [[AlertView alloc] init];
+    
     [self setUpLoaderView];
     
     [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -136,7 +159,7 @@
         if (!error) {
             // Success! Include your code to handle the results here
             NSLog(@"user info: %@", result);
-            
+        
             self.TF_email.text = [result valueForKey:@"email"];
             self.TF_fullName.text = [result valueForKey:@"name"];
             
@@ -147,6 +170,43 @@
         }
     }];
 
+}
+
+#pragma mark - Validation Methods
+
+-(NSString *)validateRegister
+{
+    NSString *validationStr = @"";
+    
+    if (self.TF_fullName.text.length == 0)
+    {
+        validationStr = @"Please enter your full name";
+    }
+    else if (self.TF_email.text.length == 0)
+    {
+        validationStr = @"Please enter your email address";
+    }
+    else if (![self IsValidEmail:self.TF_email.text Strict:NO])
+    {
+        validationStr = @"Please enter valid email address";
+    }
+    else if (self.TF_password.text.length == 0)
+    {
+        validationStr = @"Please enter your password";
+    }
+    
+    return validationStr;
+}
+
+-(BOOL) IsValidEmail:(NSString *)emailString Strict:(BOOL)strictFilter
+{
+    NSString *stricterFilterString = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]";
+    NSString *laxString = @".+@.+\\.[A-Za-z]{2}[A-Za-z]*";
+    
+    NSString *emailRegex = strictFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    
+    return [emailTest evaluateWithObject:emailString];
 }
 
 #pragma mark - Loader Setup
@@ -174,7 +234,8 @@
         [self makeRequestForUserData];
         
         // If the session state is not any of the two "open" states when the button is clicked
-    } else {
+    }
+    else {
         // Open a session showing the user the login UI
         // You must ALWAYS ask for public_profile permissions when opening a session
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"email"]
@@ -183,7 +244,8 @@
          ^(FBSession *session, FBSessionState state, NSError *error) {
              
              // Retrieve the app delegate
-             AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+             
+             AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
              // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
              [appDelegate sessionStateChanged:session state:state error:error];
              
@@ -194,21 +256,90 @@
 
 - (IBAction)Action_Next:(id)sender
 {
+    self.alertObj = [[AlertView alloc] init];
+    
+    NSString *tempStr = [self validateRegister];
+    
+    if (tempStr.length != 0)
+    {
+        [self.alertObj showStaticAlertWithTitle:@"" AndMessage:tempStr];
+        
+        return;
+    }
+    
     NSString *urlStr = [BasePath stringByAppendingString:Register];
     
     NSDictionary *params = @{@"email" : self.TF_email.text, @"nickname" : @"", @"password" : self.TF_password.text, @"repeatPassword" : self.TF_password.text};
-
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:nil];
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-
     
-    [IOSRequest testMethod:urlStr andParmas:params success:^(NSDictionary *responseStr) {
-        
-        
-    } failure:^(NSError *error) {
-        
-    }];
+    [self setUpLoaderView];
+    [self callWebService:urlStr AndParmas:params];
+}
+
+#pragma mark - WebService Methods
+
+-(void)callWebService : (NSString *)urlStr AndParmas : (NSDictionary *)params
+{
+    self.mutData = [[NSMutableData alloc] init];
     
+    NSURL *url = [NSURL URLWithString:urlStr];
+    NSMutableURLRequest *urlReq = [[NSMutableURLRequest alloc] initWithURL:url];
+    
+    [urlReq setHTTPMethod:@"POST"];
+    NSError *error = nil;
+    NSData *executionsData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:&error];
+    [urlReq setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlReq setHTTPBody:executionsData];
+    
+    self.urlConn = [[NSURLConnection alloc] initWithRequest:urlReq delegate:self];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    self.alertObj = [[AlertView alloc] init];
+    
+    [self.loaderObj performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:NO];
+    [self.alertObj showStaticAlertWithTitle:@"" AndMessage:@"Error connecting to server.\nPlease try again later"];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response
+{
+    self.alertObj = [[AlertView alloc] init];
+    
+    [self.mutData setLength:0];
+    
+    if ([response statusCode] == 200)
+    {
+        self.success = 1;
+    }
+    else
+    {
+        self.success = 0;
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.mutData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    [self.loaderObj performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:NO];
+    
+    self.alertObj = [[AlertView alloc] init];
+    
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:self.mutData options:NSJSONReadingMutableLeaves error:nil];
+    
+    if (self.success == 0)
+    {
+        [self.alertObj showStaticAlertWithTitle:@"" AndMessage:[[dict valueForKeyPath:@"errors.email"] objectAtIndex:0]];
+    }
+    else
+    {
+        [self.alertObj showStaticAlertWithTitle:@"" AndMessage:@"A verification email has been sent to your email address. Please verify your email address before proceeding further"];
+    }
+    
+    NSLog(@"%@",dict);
 }
 
 

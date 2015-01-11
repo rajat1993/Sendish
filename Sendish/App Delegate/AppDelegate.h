@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK.h>
+#import <REFrostedViewController.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, REFrostedViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
+-(void)changeRootViewController;
+-(void)makeLoginRootController;
 
 @end
 

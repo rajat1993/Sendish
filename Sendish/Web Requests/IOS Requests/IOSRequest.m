@@ -165,30 +165,9 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-+(void)uploadData1 : (NSString *)url parameters:(NSDictionary *)dparameters videoData:(NSData *)dVideoData  success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    
-    AFHTTPRequestOperation *op = [manager POST:url parameters:dparameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        //do not put image inside parameters dictionary as I did, but append it!
-        
-        [formData appendPartWithFileData:dVideoData name:@"video" fileName:@"userRegistration" mimeType:@"text/plain"];
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        success(responseObject);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        failure(error);
-    }];
-    //op.responseSerializer = [AFHTTPResponseSerializer serializer];
-    op.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [op start];
-}
 
 
-+(void)testMethod : (NSString *)url andParmas : (NSDictionary *)params success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure
++(void)postRequestForregister : (NSString *)url andParmas : (NSDictionary *)params success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
   //  [request setTimeoutInterval:600];
@@ -196,6 +175,7 @@
 //    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)executionsData.length] forHTTPHeaderField:@"Content-Length"];
     
     NSError *error = nil;
+    
     NSData *executionsData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:&error];
 
     
@@ -212,7 +192,7 @@
         //process result json dictionary
         
         //success
-        success([NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil]);
+        //success([NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil]);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         //failure
         NSLog(@"Error:%@",error);
@@ -222,6 +202,13 @@
     [op start];
 }
 
++(void)makeFacebookLogin : (NSString *)url success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+
+    [request setHTTPMethod:@"POST"];
+
+}
 
 
 @end

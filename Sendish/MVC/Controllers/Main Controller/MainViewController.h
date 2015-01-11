@@ -20,6 +20,4 @@
 
 @property (nonatomic, strong) NSArray *pages;
 
-@property (weak, nonatomic) IBOutlet UIView *navigationView;
-
 @end

@@ -13,6 +13,9 @@
 
 #define Login @"api/v1.0/user-profile"
 #define Register @"api/v1.0/registration"
+#define ResetPassword @"api/v1.0/registration/reset-password"
+
+#define UpdateLocation @"api/v1.0/user-profile/update-location"
 
 #endif
 

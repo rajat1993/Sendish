@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "MainViewController.h"
+#import "SidePanelViewController.h"
+#import "ReceivedSendishViewController.h"
 
 @interface AppDelegate ()
 
@@ -29,6 +32,8 @@
     [self.window setRootViewController:navObj];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    //[self changeRootViewController];
     
     return YES;
 }
@@ -60,15 +65,49 @@
     [FBSession.activeSession setStateChangeHandler:
      ^(FBSession *session, FBSessionState state, NSError *error) {
          
-         // Retrieve the app delegate
-         AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-         // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-         [appDelegate sessionStateChanged:session state:state error:error];
+         [self sessionStateChanged:session state:state error:error];
      }];
 
     // attempt to extract a token from the url
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
+
+#pragma mark - Custom Methods
+
+-(void)changeRootViewController
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    MainViewController *sideNavObj = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    
+    UINavigationController *navObj = [[UINavigationController alloc] initWithRootViewController:sideNavObj];
+    
+    SidePanelViewController*sidePanel = [[SidePanelViewController alloc] initWithNibName:@"SidePanelViewController" bundle:nil];
+    
+    REFrostedViewController *frostedViewCtlr = [[REFrostedViewController alloc] initWithContentViewController:navObj menuViewController:sidePanel];
+    [frostedViewCtlr setMenuViewSize:CGSizeMake(self.window.frame.size.width-80, self.window.frame.size.height)];
+    frostedViewCtlr.direction = REFrostedViewControllerDirectionLeft;
+    frostedViewCtlr.liveBlurBackgroundStyle = REFrostedViewControllerLiveBackgroundStyleLight;
+    frostedViewCtlr.liveBlur = YES;
+    frostedViewCtlr.delegate = self;
+    
+    [self.window setRootViewController:frostedViewCtlr];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+}
+
+-(void)makeLoginRootController
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    RootViewController *rootObj = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+    UINavigationController *navObj = [[UINavigationController alloc] initWithRootViewController:rootObj];
+    [self.window setRootViewController:navObj];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+}
+
 
 #pragma mark - Facebook Handling
 
@@ -78,6 +117,9 @@
     if (!error && state == FBSessionStateOpen){
         NSLog(@"Session opened");
         // Show the user the logged-in UI
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"fb_session_open" object:nil];
+        
         return;
     }
     if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){

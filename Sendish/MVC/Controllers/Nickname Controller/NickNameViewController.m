@@ -9,6 +9,7 @@
 #import "NickNameViewController.h"
 #import "Constants.h"
 #import "MainViewController.h"
+#import "UserAccount.h"
 
 @interface NickNameViewController ()
 
@@ -51,6 +52,8 @@
 
 - (IBAction)Action_getStarted:(id)sender
 {
+    AppDelegate *appDelObj = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
     self.alertObj = [[AlertView alloc] init];
     
     if(self.TF_nickName.text.length == 0)
@@ -59,8 +62,12 @@
         return;
     }
     
-    MainViewController *mainCtrlr = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    [self.navigationController pushViewController:mainCtrlr animated:YES];
+    [UserAccount sharedInstance].nickName = self.TF_nickName.text;
+    
+    [[NSUserDefaults standardUserDefaults] setObject:self.TF_nickName.text forKey:@"nickname"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [appDelObj changeRootViewController];
 }
 
 @end
