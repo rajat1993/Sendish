@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -11,6 +10,7 @@
                 <outlet property="Btn_flash" destination="TxG-zG-n1W" id="utu-jt-CJu"/>
                 <outlet property="Btn_rotateCamera" destination="4Ca-lu-1Ji" id="dvS-MF-ahA"/>
                 <outlet property="Btn_takePhoto" destination="JAC-2H-Sfi" id="te9-5y-wnb"/>
+                <outlet property="Label_place" destination="iP9-Ls-foF" id="gvJ-Rs-d11"/>
                 <outlet property="cameraView" destination="7p0-Ww-Ask" id="vh5-Ru-Xn0"/>
                 <outlet property="flashView" destination="6OT-f8-bMP" id="gqS-pR-bwh"/>
                 <outlet property="imgView_captured" destination="sgl-tH-PTs" id="fdJ-4f-n1u"/>
@@ -45,7 +45,7 @@
                         <constraint firstAttribute="height" constant="64" id="2mV-ZZ-2zG"/>
                     </constraints>
                 </view>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Lyon, France" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="iP9-Ls-foF" userLabel="Lyon, France">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Getting Location..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="iP9-Ls-foF" userLabel="Lyon, France">
                     <rect key="frame" x="0.0" y="64" width="320" height="30"/>
                     <color key="backgroundColor" red="0.12941176470588234" green="0.094117647058823528" blue="0.12941176470588234" alpha="0.95999999999999996" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -164,7 +164,7 @@
                 <constraint firstItem="7wI-g5-Zou" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uez-oG-3h7"/>
                 <constraint firstItem="7p0-Ww-Ask" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uug-Hm-t6R"/>
             </constraints>
-            <point key="canvasLocation" x="469" y="286"/>
+            <point key="canvasLocation" x="492" y="288"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -11,6 +11,7 @@
 #import "UserAccount.h"
 #import "Colors.h"
 #import "Constants.h"
+#import <UIImageView+WebCache.h>
 
 @interface SidePanelViewController ()
 
@@ -93,6 +94,13 @@
         sidePanelCell = [nib objectAtIndex:0];
     }
     
+    if (indexPath.row == 0)
+    {
+        [sidePanelCell.imgView_leftImg sd_setImageWithURL:[NSURL URLWithString:[[UserAccount sharedInstance] imageUrl]]];
+        sidePanelCell.imgView_leftImg.layer.cornerRadius = sidePanelCell.imgView_leftImg.frame.size.width/2;
+        sidePanelCell.imgView_leftImg.clipsToBounds = YES;
+    }
+    
     sidePanelCell.backgroundColor = [UIColor clearColor];
     [sidePanelCell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
@@ -158,6 +166,24 @@
     return 70;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30)];
+    headerView.backgroundColor = [UIColor clearColor];
+    
+    return headerView;
+}
+
 #pragma mark - Alert Delegate Methods
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -165,6 +191,15 @@
     if (buttonIndex == 1)
     {
         AppDelegate *appDelObj = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        
+        [[UserAccount sharedInstance] invalidate];
+        
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"auth_token"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"auth_header"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"login_data"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user_pic"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         [appDelObj makeLoginRootController];
     }
 }

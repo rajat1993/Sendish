@@ -150,6 +150,8 @@
 {
     self.alertObj = [[AlertView alloc] init];
     
+    [self.loaderObj performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:NO];
+    
     [self setUpLoaderView];
     
     [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -224,6 +226,11 @@
 
 - (IBAction)Action_fbSignup:(id)sender
 {
+    NSLog(@"fb signup called");
+    
+    AppDelegate *appDelObj = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    appDelObj.calledWithLogin = NO;
+    
     self.alertObj = [[AlertView alloc] init];
 
     if (FBSession.activeSession.state == FBSessionStateOpen
@@ -231,6 +238,9 @@
         
         // Close the session and remove the access token from the cache
         // The session state handler (in the app delegate) will be called automatically
+        
+        NSLog(@"already open");
+        
         [self makeRequestForUserData];
         
         // If the session state is not any of the two "open" states when the button is clicked
@@ -244,9 +254,12 @@
          ^(FBSession *session, FBSessionState state, NSError *error) {
              
              // Retrieve the app delegate
-             
+            
              AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
              // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
+             
+             NSLog(@"opening");
+             
              [appDelegate sessionStateChanged:session state:state error:error];
              
              [self makeRequestForUserData];

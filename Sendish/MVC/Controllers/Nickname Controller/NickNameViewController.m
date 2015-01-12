@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +54,8 @@
 
 - (IBAction)Action_getStarted:(id)sender
 {
+    [self.view endEditing:YES];
+    
     AppDelegate *appDelObj = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     self.alertObj = [[AlertView alloc] init];

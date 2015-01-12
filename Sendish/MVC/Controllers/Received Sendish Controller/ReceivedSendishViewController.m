@@ -106,7 +106,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ReceivedSendishTableViewCell *receivedSendishCell = (ReceivedSendishTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"receivedSendihCell"];
+    ReceivedSendishTableViewCell *receivedSendishCell = (ReceivedSendishTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"receivedSendishCell"];
     
     if (receivedSendishCell == nil)
     {
@@ -153,6 +153,13 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 200;
+}
+
+#pragma mark - API Received Sendish List
+
+-(void)getReceivedSendish
+{
+    
 }
 
 @end

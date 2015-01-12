@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <MapKit/MapKit.h>
 
-@interface TakeSendishViewController : UIViewController <UIAlertViewDelegate>
+@interface TakeSendishViewController : UIViewController <UIAlertViewDelegate, CLLocationManagerDelegate>
+
+@property CLLocationManager *locMgr;
+@property CLLocation *currentLocation;
+@property CLGeocoder *geoCoder;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView_captured;
@@ -19,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *Btn_description;
 @property (weak, nonatomic) IBOutlet UIButton *Btn_takePhoto;
 @property (weak, nonatomic) IBOutlet UIButton *Btn_rotateCamera;
+@property (weak, nonatomic) IBOutlet UILabel *Label_place;
 
 
 - (IBAction)Action_toggleFlash:(id)sender;

@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MNMBottomPullToRefreshManager.h"
 
-@interface SentSendishViewController : UIViewController
+@interface SentSendishViewController : UIViewController <MNMBottomPullToRefreshManagerClient, UITableViewDataSource, UITableViewDelegate>
+
+@property MNMBottomPullToRefreshManager *pullToRefreshManager;
+
 @property (weak, nonatomic) IBOutlet UIView *navigationView;
-
-
-
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView_sentSendish;
 
 @end

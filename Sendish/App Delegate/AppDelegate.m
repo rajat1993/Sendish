@@ -11,6 +11,9 @@
 #import "MainViewController.h"
 #import "SidePanelViewController.h"
 #import "ReceivedSendishViewController.h"
+#import "GetLcationViewController.h"
+#import "NickNameViewController.h"
+#import "UserAccount.h"
 
 @interface AppDelegate ()
 
@@ -24,16 +27,53 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    RootViewController *rootObj = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
-    UINavigationController *navObj = [[UINavigationController alloc] initWithRootViewController:rootObj];
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"auth_token"] == nil || [[NSUserDefaults standardUserDefaults] valueForKey:@"auth_header"] == nil)
+    {
+        RootViewController *rootObj = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+        UINavigationController *navObj = [[UINavigationController alloc] initWithRootViewController:rootObj];
+        [self.window setRootViewController:navObj];
+
+        self.window.backgroundColor = [UIColor whiteColor];
+        [self.window makeKeyAndVisible];
+
+    }
+    else
+    {
+        [UserAccount sharedInstance].authHeader = [[NSUserDefaults standardUserDefaults] valueForKey:@"auth_header"];
+        [UserAccount sharedInstance].authToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"auth_token"];
+
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"location_updated"] != YES)
+        {
+            GetLcationViewController *getLocationCtrlr = [[GetLcationViewController alloc] initWithNibName:@"GetLcationViewController" bundle:nil];
+            UINavigationController *navObj = [[UINavigationController alloc] initWithRootViewController:getLocationCtrlr];
+            [self.window setRootViewController:navObj];
+            
+            self.window.backgroundColor = [UIColor whiteColor];
+            [self.window makeKeyAndVisible];
+        }
+        else if ([[NSUserDefaults standardUserDefaults] valueForKey:@"nickname"] == nil)
+        {
+            NickNameViewController *nickNameCtrlr = [[NickNameViewController alloc] initWithNibName:@"NickNameViewController" bundle:nil];
+            UINavigationController *navObj = [[UINavigationController alloc] initWithRootViewController:nickNameCtrlr];
+            [self.window setRootViewController:navObj];
+            
+            self.window.backgroundColor = [UIColor whiteColor];
+            [self.window makeKeyAndVisible];
+        }
+        else
+        {
+            [UserAccount sharedInstance].nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"nickname"];
+
+            if ([[NSUserDefaults standardUserDefaults] valueForKey:@"user_pic"] != nil)
+            {
+                [UserAccount sharedInstance].imageUrl = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_pic"];
+            }
+            
+            [self changeRootViewController];
+        }
+    }
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    [self.window setRootViewController:navObj];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    
-    //[self changeRootViewController];
     
     return YES;
 }
@@ -58,8 +98,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    [FBAppCall handleDidBecomeActive];
 }
-
+/*
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     [FBSession.activeSession setStateChangeHandler:
@@ -71,6 +113,18 @@
     // attempt to extract a token from the url
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
+*/
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    [FBSession.activeSession setStateChangeHandler:
+     ^(FBSession *session, FBSessionState state, NSError *error) {
+         
+         [self sessionStateChanged:session state:state error:error];
+     }];
+
+    return [[FBSession activeSession] handleOpenURL:url];
+}
+
 
 #pragma mark - Custom Methods
 
@@ -118,7 +172,14 @@
         NSLog(@"Session opened");
         // Show the user the logged-in UI
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"fb_session_open" object:nil];
+        if (self.calledWithLogin)
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"login_with_facebook" object:nil];
+        }
+        else
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"fb_session_open" object:nil];
+        }
         
         return;
     }

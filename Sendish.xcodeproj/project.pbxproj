@@ -38,12 +38,25 @@
 		713539861A5B038700249630 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 713539851A5B038700249630 /* Base64.m */; };
 		715841511A6049BB006AA95B /* SidePanelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7158414F1A6049BB006AA95B /* SidePanelTableViewCell.m */; };
 		715841521A6049BB006AA95B /* SidePanelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715841501A6049BB006AA95B /* SidePanelTableViewCell.xib */; };
+		71623EB41A638E5300DCC775 /* UserModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 71623EB31A638E5300DCC775 /* UserModal.m */; };
 		716E304E1A559B0D0007B44C /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E304D1A559B0D0007B44C /* AlertView.m */; };
+		7185DF9E1A63C544000A5319 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7185DF9D1A63C544000A5319 /* Images.xcassets */; };
+		7185DFA21A63D725000A5319 /* UIImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185DFA11A63D725000A5319 /* UIImage+Extras.m */; };
+		7185DFAB1A63FF28000A5319 /* MNMBottomPullToRefresh.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7185DFA41A63FF28000A5319 /* MNMBottomPullToRefresh.strings */; };
+		7185DFAC1A63FF28000A5319 /* MNMBottomPullToRefreshArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7185DFA51A63FF28000A5319 /* MNMBottomPullToRefreshArrow.png */; };
+		7185DFAD1A63FF28000A5319 /* MNMBottomPullToRefreshArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7185DFA61A63FF28000A5319 /* MNMBottomPullToRefreshArrow@2x.png */; };
+		7185DFAE1A63FF28000A5319 /* MNMBottomPullToRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185DFA81A63FF28000A5319 /* MNMBottomPullToRefreshManager.m */; };
+		7185DFAF1A63FF28000A5319 /* MNMBottomPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185DFAA1A63FF28000A5319 /* MNMBottomPullToRefreshView.m */; };
+		7185DFB41A64057B000A5319 /* SentSendishTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185DFB21A64057B000A5319 /* SentSendishTableViewCell.m */; };
+		7185DFB51A64057B000A5319 /* SentSendishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7185DFB31A64057B000A5319 /* SentSendishTableViewCell.xib */; };
+		7185DFB91A640AD6000A5319 /* SentSendishModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185DFB81A640AD6000A5319 /* SentSendishModal.m */; };
+		7185DFBD1A640C69000A5319 /* UserProfileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185DFBC1A640C69000A5319 /* UserProfileParser.m */; };
+		7185DFC11A640C8E000A5319 /* SentSendishParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185DFC01A640C8E000A5319 /* SentSendishParser.m */; };
+		7185DFC31A64159F000A5319 /* blurImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7185DFC21A64159F000A5319 /* blurImage.jpg */; };
 		71A7FF8B1A5B0A2400A10475 /* IOSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7FF8A1A5B0A2400A10475 /* IOSRequest.m */; };
 		71AAF3701A5DAE310028B0B3 /* SidePanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AAF36E1A5DAE310028B0B3 /* SidePanelViewController.m */; };
 		71AAF3711A5DAE310028B0B3 /* SidePanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71AAF36F1A5DAE310028B0B3 /* SidePanelViewController.xib */; };
 		71B48BD31A51AFC600A37FF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BD21A51AFC600A37FF7 /* main.m */; };
-		71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDD1A51AFC600A37FF7 /* Images.xcassets */; };
 		71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B48BDF1A51AFC600A37FF7 /* LaunchScreen.xib */; };
 		71B48BED1A51AFC600A37FF7 /* SendishTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BEC1A51AFC600A37FF7 /* SendishTests.m */; };
 		71B48BF91A51B05300A37FF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B48BF81A51B05300A37FF7 /* AppDelegate.m */; };
@@ -120,9 +133,31 @@
 		7158414E1A6049BB006AA95B /* SidePanelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidePanelTableViewCell.h; sourceTree = "<group>"; };
 		7158414F1A6049BB006AA95B /* SidePanelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidePanelTableViewCell.m; sourceTree = "<group>"; };
 		715841501A6049BB006AA95B /* SidePanelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidePanelTableViewCell.xib; sourceTree = "<group>"; };
+		71623EB21A638E5300DCC775 /* UserModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModal.h; sourceTree = "<group>"; };
+		71623EB31A638E5300DCC775 /* UserModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModal.m; sourceTree = "<group>"; };
 		716E304C1A559B0D0007B44C /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		716E304D1A559B0D0007B44C /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		716E30501A559B2D0007B44C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		7185DF9D1A63C544000A5319 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7185DFA01A63D725000A5319 /* UIImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extras.h"; sourceTree = "<group>"; };
+		7185DFA11A63D725000A5319 /* UIImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extras.m"; sourceTree = "<group>"; };
+		7185DFA41A63FF28000A5319 /* MNMBottomPullToRefresh.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MNMBottomPullToRefresh.strings; sourceTree = "<group>"; };
+		7185DFA51A63FF28000A5319 /* MNMBottomPullToRefreshArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MNMBottomPullToRefreshArrow.png; sourceTree = "<group>"; };
+		7185DFA61A63FF28000A5319 /* MNMBottomPullToRefreshArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MNMBottomPullToRefreshArrow@2x.png"; sourceTree = "<group>"; };
+		7185DFA71A63FF28000A5319 /* MNMBottomPullToRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMBottomPullToRefreshManager.h; sourceTree = "<group>"; };
+		7185DFA81A63FF28000A5319 /* MNMBottomPullToRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMBottomPullToRefreshManager.m; sourceTree = "<group>"; };
+		7185DFA91A63FF28000A5319 /* MNMBottomPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMBottomPullToRefreshView.h; sourceTree = "<group>"; };
+		7185DFAA1A63FF28000A5319 /* MNMBottomPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMBottomPullToRefreshView.m; sourceTree = "<group>"; };
+		7185DFB11A64057B000A5319 /* SentSendishTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentSendishTableViewCell.h; sourceTree = "<group>"; };
+		7185DFB21A64057B000A5319 /* SentSendishTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentSendishTableViewCell.m; sourceTree = "<group>"; };
+		7185DFB31A64057B000A5319 /* SentSendishTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SentSendishTableViewCell.xib; sourceTree = "<group>"; };
+		7185DFB71A640AD6000A5319 /* SentSendishModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentSendishModal.h; sourceTree = "<group>"; };
+		7185DFB81A640AD6000A5319 /* SentSendishModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentSendishModal.m; sourceTree = "<group>"; };
+		7185DFBB1A640C69000A5319 /* UserProfileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileParser.h; sourceTree = "<group>"; };
+		7185DFBC1A640C69000A5319 /* UserProfileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileParser.m; sourceTree = "<group>"; };
+		7185DFBF1A640C8E000A5319 /* SentSendishParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentSendishParser.h; sourceTree = "<group>"; };
+		7185DFC01A640C8E000A5319 /* SentSendishParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentSendishParser.m; sourceTree = "<group>"; };
+		7185DFC21A64159F000A5319 /* blurImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blurImage.jpg; sourceTree = "<group>"; };
 		71A7FF891A5B0A2400A10475 /* IOSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSRequest.h; sourceTree = "<group>"; };
 		71A7FF8A1A5B0A2400A10475 /* IOSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSRequest.m; sourceTree = "<group>"; };
 		71AAF36D1A5DAE310028B0B3 /* SidePanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidePanelViewController.h; sourceTree = "<group>"; };
@@ -131,7 +166,6 @@
 		71B48BCD1A51AFC600A37FF7 /* Sendish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sendish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B48BD11A51AFC600A37FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71B48BD21A51AFC600A37FF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		71B48BDD1A51AFC600A37FF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		71B48BE01A51AFC600A37FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		71B48BE61A51AFC600A37FF7 /* SendishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SendishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B48BEB1A51AFC600A37FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -249,6 +283,7 @@
 		711F96111A59131400BF7A06 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				7185DFC21A64159F000A5319 /* blurImage.jpg */,
 				711F96121A59132100BF7A06 /* demoImage1.jpg */,
 				711F96131A59132100BF7A06 /* demoImage2.jpg */,
 			);
@@ -288,6 +323,8 @@
 		7126FFE11A5315FF0004EADF /* Third Library */ = {
 			isa = PBXGroup;
 			children = (
+				7185DFA31A63FF28000A5319 /* MNMBottomPullToRefresh */,
+				7185DF9F1A63D725000A5319 /* Image Orientation */,
 				713539831A5B038700249630 /* Base64 */,
 				7126FFE61A53161B0004EADF /* ALAssetsLibrary_CustomPhotoAlbum */,
 			);
@@ -324,6 +361,7 @@
 		7158414C1A604962006AA95B /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7185DFB01A640560000A5319 /* Sent Sendish Cell */,
 				71FE62F91A628D9200725FC0 /* Received Sendish Cell */,
 				7158414D1A6049A4006AA95B /* SidePanel Cell */,
 			);
@@ -338,6 +376,24 @@
 				715841501A6049BB006AA95B /* SidePanelTableViewCell.xib */,
 			);
 			path = "SidePanel Cell";
+			sourceTree = "<group>";
+		};
+		71623EAD1A638D4700DCC775 /* Web Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				7185DFBE1A640C7B000A5319 /* SentSendish Parser */,
+				7185DFBA1A640C69000A5319 /* UserProfile Parser */,
+			);
+			path = "Web Parsers";
+			sourceTree = "<group>";
+		};
+		71623EB11A638E4500DCC775 /* User Modal */ = {
+			isa = PBXGroup;
+			children = (
+				71623EB21A638E5300DCC775 /* UserModal.h */,
+				71623EB31A638E5300DCC775 /* UserModal.m */,
+			);
+			path = "User Modal";
 			sourceTree = "<group>";
 		};
 		716E304B1A559AC40007B44C /* Alert View */ = {
@@ -357,6 +413,66 @@
 				7102C2121A5804B10064D1FD /* WebURLs.h */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		7185DF9F1A63D725000A5319 /* Image Orientation */ = {
+			isa = PBXGroup;
+			children = (
+				7185DFA01A63D725000A5319 /* UIImage+Extras.h */,
+				7185DFA11A63D725000A5319 /* UIImage+Extras.m */,
+			);
+			path = "Image Orientation";
+			sourceTree = "<group>";
+		};
+		7185DFA31A63FF28000A5319 /* MNMBottomPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				7185DFA41A63FF28000A5319 /* MNMBottomPullToRefresh.strings */,
+				7185DFA51A63FF28000A5319 /* MNMBottomPullToRefreshArrow.png */,
+				7185DFA61A63FF28000A5319 /* MNMBottomPullToRefreshArrow@2x.png */,
+				7185DFA71A63FF28000A5319 /* MNMBottomPullToRefreshManager.h */,
+				7185DFA81A63FF28000A5319 /* MNMBottomPullToRefreshManager.m */,
+				7185DFA91A63FF28000A5319 /* MNMBottomPullToRefreshView.h */,
+				7185DFAA1A63FF28000A5319 /* MNMBottomPullToRefreshView.m */,
+			);
+			path = MNMBottomPullToRefresh;
+			sourceTree = "<group>";
+		};
+		7185DFB01A640560000A5319 /* Sent Sendish Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7185DFB11A64057B000A5319 /* SentSendishTableViewCell.h */,
+				7185DFB21A64057B000A5319 /* SentSendishTableViewCell.m */,
+				7185DFB31A64057B000A5319 /* SentSendishTableViewCell.xib */,
+			);
+			path = "Sent Sendish Cell";
+			sourceTree = "<group>";
+		};
+		7185DFB61A640AC3000A5319 /* Sent Sendish Modal */ = {
+			isa = PBXGroup;
+			children = (
+				7185DFB71A640AD6000A5319 /* SentSendishModal.h */,
+				7185DFB81A640AD6000A5319 /* SentSendishModal.m */,
+			);
+			path = "Sent Sendish Modal";
+			sourceTree = "<group>";
+		};
+		7185DFBA1A640C69000A5319 /* UserProfile Parser */ = {
+			isa = PBXGroup;
+			children = (
+				7185DFBB1A640C69000A5319 /* UserProfileParser.h */,
+				7185DFBC1A640C69000A5319 /* UserProfileParser.m */,
+			);
+			path = "UserProfile Parser";
+			sourceTree = "<group>";
+		};
+		7185DFBE1A640C7B000A5319 /* SentSendish Parser */ = {
+			isa = PBXGroup;
+			children = (
+				7185DFBF1A640C8E000A5319 /* SentSendishParser.h */,
+				7185DFC01A640C8E000A5319 /* SentSendishParser.m */,
+			);
+			path = "SentSendish Parser";
 			sourceTree = "<group>";
 		};
 		71A7FF881A5B0A2400A10475 /* IOS Requests */ = {
@@ -407,13 +523,14 @@
 		71B48BCF1A51AFC600A37FF7 /* Sendish */ = {
 			isa = PBXGroup;
 			children = (
+				7185DF9D1A63C544000A5319 /* Images.xcassets */,
+				71623EAD1A638D4700DCC775 /* Web Parsers */,
 				711F96111A59131400BF7A06 /* Assets */,
 				7102C21B1A580B7A0064D1FD /* Web Requests */,
 				716E304F1A559B1E0007B44C /* Constants */,
 				7126FFE11A5315FF0004EADF /* Third Library */,
 				71B48BFA1A51B16900A37FF7 /* MVC */,
 				71B48BF61A51B04200A37FF7 /* App Delegate */,
-				71B48BDD1A51AFC600A37FF7 /* Images.xcassets */,
 				71B48BDF1A51AFC600A37FF7 /* LaunchScreen.xib */,
 				71B48BD01A51AFC600A37FF7 /* Supporting Files */,
 			);
@@ -468,6 +585,8 @@
 		71B48BFB1A51B18C00A37FF7 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
+				7185DFB61A640AC3000A5319 /* Sent Sendish Modal */,
+				71623EB11A638E4500DCC775 /* User Modal */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -632,7 +751,7 @@
 				TargetAttributes = {
 					71B48BCC1A51AFC500A37FF7 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = D39HJ7PPHN;
+						DevelopmentTeam = 6FXUMT5X23;
 					};
 					71B48BE51A51AFC600A37FF7 = {
 						CreatedOnToolsVersion = 6.0;
@@ -664,22 +783,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7185DFB51A64057B000A5319 /* SentSendishTableViewCell.xib in Resources */,
 				71AAF3711A5DAE310028B0B3 /* SidePanelViewController.xib in Resources */,
 				71B48C0F1A51B85300A37FF7 /* LoginViewController.xib in Resources */,
 				7102C2111A57E5290064D1FD /* LoaderView.xib in Resources */,
 				71B48C151A51BADA00A37FF7 /* MainViewController.xib in Resources */,
 				7126FFCA1A52FE2F0004EADF /* ReceivedSendishViewController.xib in Resources */,
 				7102C2251A580BE30064D1FD /* NickNameViewController.xib in Resources */,
+				7185DFAD1A63FF28000A5319 /* MNMBottomPullToRefreshArrow@2x.png in Resources */,
 				71B48BE11A51AFC600A37FF7 /* LaunchScreen.xib in Resources */,
-				71B48BDE1A51AFC600A37FF7 /* Images.xcassets in Resources */,
 				71B48C091A51B77700A37FF7 /* SignupViewController.xib in Resources */,
+				7185DFC31A64159F000A5319 /* blurImage.jpg in Resources */,
 				711F96141A59132100BF7A06 /* demoImage1.jpg in Resources */,
+				7185DF9E1A63C544000A5319 /* Images.xcassets in Resources */,
 				7102C2181A58073D0064D1FD /* GetLcationViewController.xib in Resources */,
 				715841521A6049BB006AA95B /* SidePanelTableViewCell.xib in Resources */,
 				71B48C031A51B2E300A37FF7 /* RootViewController.xib in Resources */,
 				7102C22B1A5811890064D1FD /* ShareViewController.xib in Resources */,
 				71B48C1B1A51BD2400A37FF7 /* NavigationView.xib in Resources */,
+				7185DFAC1A63FF28000A5319 /* MNMBottomPullToRefreshArrow.png in Resources */,
 				7126FFD61A5303970004EADF /* TakeSendishViewController.xib in Resources */,
+				7185DFAB1A63FF28000A5319 /* MNMBottomPullToRefresh.strings in Resources */,
 				7126FFD01A52FE530004EADF /* SentSendishViewController.xib in Resources */,
 				711F96151A59132100BF7A06 /* demoImage2.jpg in Resources */,
 				71FE62FE1A628D9200725FC0 /* ReceivedSendishTableViewCell.xib in Resources */,
@@ -737,8 +861,10 @@
 			files = (
 				71B48BF91A51B05300A37FF7 /* AppDelegate.m in Sources */,
 				71FE62FD1A628D9200725FC0 /* ReceivedSendishTableViewCell.m in Sources */,
+				7185DFAF1A63FF28000A5319 /* MNMBottomPullToRefreshView.m in Sources */,
 				7126FFCF1A52FE530004EADF /* SentSendishViewController.m in Sources */,
 				711F960F1A59101E00BF7A06 /* TutorialViewController.m in Sources */,
+				7185DFC11A640C8E000A5319 /* SentSendishParser.m in Sources */,
 				7126FFE91A53161B0004EADF /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				713539821A5AFB3300249630 /* UserAccount.m in Sources */,
 				71B48C191A51BD0E00A37FF7 /* NavigationView.m in Sources */,
@@ -753,10 +879,16 @@
 				7102C2101A57E5290064D1FD /* LoaderView.m in Sources */,
 				7126FFC91A52FE2F0004EADF /* ReceivedSendishViewController.m in Sources */,
 				716E304E1A559B0D0007B44C /* AlertView.m in Sources */,
+				7185DFAE1A63FF28000A5319 /* MNMBottomPullToRefreshManager.m in Sources */,
 				7126FFD51A5303970004EADF /* TakeSendishViewController.m in Sources */,
+				7185DFBD1A640C69000A5319 /* UserProfileParser.m in Sources */,
 				7102C2171A58073D0064D1FD /* GetLcationViewController.m in Sources */,
 				7102C22A1A5811890064D1FD /* ShareViewController.m in Sources */,
+				7185DFA21A63D725000A5319 /* UIImage+Extras.m in Sources */,
 				71B48C0E1A51B85300A37FF7 /* LoginViewController.m in Sources */,
+				71623EB41A638E5300DCC775 /* UserModal.m in Sources */,
+				7185DFB41A64057B000A5319 /* SentSendishTableViewCell.m in Sources */,
+				7185DFB91A640AD6000A5319 /* SentSendishModal.m in Sources */,
 				71A7FF8B1A5B0A2400A10475 /* IOSRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -808,7 +940,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -828,7 +961,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8c37cca6-3c13-42d6-b159-fed4553a88d0";
+				PROVISIONING_PROFILE = "78eeb0f6-3433-4a6f-84d8-4de768c7b723";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -851,7 +984,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -864,7 +998,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "8c37cca6-3c13-42d6-b159-fed4553a88d0";
+				PROVISIONING_PROFILE = "78eeb0f6-3433-4a6f-84d8-4de768c7b723";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -876,8 +1010,9 @@
 			baseConfigurationReference = E26489F450B5373BAD32CBDD /* Pods-Sendish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sendish/Web",
@@ -891,7 +1026,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8c37cca6-3c13-42d6-b159-fed4553a88d0";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -901,8 +1036,9 @@
 			baseConfigurationReference = 0CA270C94336AC9E84EABD58 /* Pods-Sendish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FELIX MEDIA j.d.o.o. (D39HJ7PPHN)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sendish/Web",
@@ -916,7 +1052,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8c37cca6-3c13-42d6-b159-fed4553a88d0";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

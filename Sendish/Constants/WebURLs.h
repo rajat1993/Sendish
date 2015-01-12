@@ -17,5 +17,11 @@
 
 #define UpdateLocation @"api/v1.0/user-profile/update-location"
 
+#define SendSendish @"api/v1.0/photos/sendish-upload"
+#define ReceivedSendishList @"api/v1.0/photos/received"
+
+#define SentSendishList @"api/v1.0/photos/sent"
+#define GetSentImage @"api/v1.0/photos/sent/%@/view"
+
 #endif
 

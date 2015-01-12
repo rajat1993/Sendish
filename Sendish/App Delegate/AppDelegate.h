@@ -13,6 +13,13 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, REFrostedViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property BOOL calledWithLogin;
+
+@property int currentPage_received;
+@property int currentPage_sent;
+
+@property BOOL endOfSentSendish;
+@property BOOL endOfReceivedSendish;
 
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
 -(void)changeRootViewController;

@@ -9,16 +9,24 @@
 #import "TakeSendishViewController.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
 #import "Constants.h"
+#import "UserAccount.h"
+#import "UIImage+Extras.h"
 
 @interface TakeSendishViewController ()
 
-@property AlertView *alertObj;
 @property UIView *blurView;
 
 @property AVCaptureSession *session;
 @property AVCaptureVideoPreviewLayer *previewLayer;
 @property AVCaptureStillImageOutput *stillImageOutput;
 @property AVCaptureDevice *device;
+
+@property int success;
+@property (nonatomic,strong) NSURLConnection *urlConn;
+@property (nonatomic,retain) NSMutableData *mutData;
+
+@property AlertView *alertObj;
+@property LoaderView *loaderObj;
 
 @end
 
@@ -40,6 +48,8 @@
     
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
+    
+    [self getCurrentLocation];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -51,9 +61,19 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self.previewLayer removeFromSuperlayer];
-    [self.session stopRunning];
-    self.session = nil;
+    @try
+    {
+        [self.previewLayer removeFromSuperlayer];
+        [self.session stopRunning];
+        self.session = nil;
+
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,7 +116,23 @@
         NSLog(@"ERROR: trying to open camera: %@", error);
     }
     
-    [self.session addInput:input];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    dispatch_async(queue, ^{
+        
+        [self performSelectorInBackground:@selector(addInput:) withObject:input];
+        //[self.session addInput:input];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+        
+                    //return to main thread
+        
+            
+                    
+        });
+
+    });
+    
+ //   [self.session addInput:input];
 
     self.stillImageOutput = [[AVCaptureStillImageOutput alloc]init];
     NSDictionary *outputSettings = @{AVVideoCodecKey : AVVideoCodecJPEG};
@@ -105,6 +141,11 @@
     [self.session addOutput:self.stillImageOutput];
     
     [self.session startRunning];
+}
+
+-(void)addInput : (AVCaptureDeviceInput *)input
+{
+    [self.session addInput:input];
 }
 
 #pragma mark - Alert Delegate Methods
@@ -126,6 +167,65 @@
         [self.Btn_description setTitle:[[alertView textFieldAtIndex:0] text] forState:UIControlStateNormal];
     }
 }
+
+#pragma mark - Get Current Location
+
+-(void)getCurrentLocation
+{
+    self.locMgr = [[CLLocationManager alloc] init];
+    self.locMgr.delegate = self;
+    
+    if ([self.locMgr respondsToSelector:@selector(requestWhenInUseAuthorization)])
+    {
+        [self.locMgr requestWhenInUseAuthorization];
+    }
+    
+    [self.locMgr startUpdatingLocation];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    self.alertObj = [[AlertView alloc] init];
+    
+    [self.alertObj showStaticAlertWithTitle:@"" AndMessage:error.localizedDescription];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [self.locMgr stopUpdatingLocation];
+    self.locMgr.delegate = nil;
+    
+    self.currentLocation = [locations lastObject];
+    
+    CLGeocoder *reverseGeocoder = [[CLGeocoder alloc] init];
+    
+    [reverseGeocoder reverseGeocodeLocation:self.currentLocation completionHandler:^(NSArray *placemarks, NSError *error)
+     {
+         if (error){
+
+             return;
+         }
+         
+         CLPlacemark *myPlacemark = [placemarks objectAtIndex:0];
+         NSString *countryName = myPlacemark.country;
+
+         NSString *cityName = [myPlacemark.addressDictionary valueForKey:@"City"];
+          
+         self.Label_place.text = [NSString stringWithFormat:@"   %@, %@", cityName, countryName];
+     }];
+}
+
+#pragma mark - Loader Setup
+
+-(void)setUpLoaderView
+{
+    AppDelegate *appDelObj = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    self.loaderObj = [[LoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.loaderObj startAnimating];
+    [appDelObj.window addSubview:self.loaderObj];
+    [appDelObj.window bringSubviewToFront:self.loaderObj];
+}
+
 
 #pragma mark - Button Actions
 
@@ -155,7 +255,18 @@
     
     if ([[self.Btn_takePhoto.titleLabel.text lowercaseString] isEqualToString:@"send"])
     {
+        if ([[self.Btn_description.titleLabel.text lowercaseString] isEqualToString:@"tap to add description"])
+        {
+            [self.alertObj showStaticAlertWithTitle:@"" AndMessage:@"Please add a description for this sendish."];
+            return;
+        }
         
+        NSString *urlStr = [BasePath stringByAppendingString:SendSendish];
+        
+        NSDictionary *params = @{@"latitude" : [NSString stringWithFormat:@"%.8f", self.currentLocation.coordinate.latitude], @"longitude" : [NSString stringWithFormat:@"%.8f", self.currentLocation.coordinate.longitude], @"description" : self.Btn_description.titleLabel.text};
+        
+        [self setUpLoaderView];
+        [self callWebService:urlStr AndParmas:params];
     }
     else
     {
@@ -174,6 +285,7 @@
                     NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
                     
                     UIImage *captureImage = [[UIImage alloc] initWithData:imageData];
+                    captureImage = [captureImage imageByScalingAndCroppingForSize:CGSizeMake(640, 640)];
                     
                     self.imgView_captured.image = captureImage;
                     
@@ -375,5 +487,104 @@
     [view addSubview:self.blurView];
 }
 
+#pragma mark - WebService Methods
+
+-(void)callWebService : (NSString *)urlStr AndParmas : (NSDictionary *)params
+{
+    self.mutData = [[NSMutableData alloc] init];
+    
+    NSURL *url = [NSURL URLWithString:urlStr];
+    NSMutableURLRequest *urlReq = [[NSMutableURLRequest alloc] initWithURL:url];
+    [urlReq setHTTPMethod:@"POST"];
+
+    NSString *boundary = @"---------------SendishBoundary111";
+    
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    [urlReq setValue:contentType forHTTPHeaderField: @"Content-Type"];
+    [urlReq addValue:[[UserAccount sharedInstance] authToken] forHTTPHeaderField:[[UserAccount sharedInstance] authHeader]];
+    
+    // post body
+    NSMutableData *body = [NSMutableData data];
+    
+    // add params (all params are strings)
+    for (NSString *param in params) {
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", param] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"%@\r\n", [params objectForKey:param]] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    // add image data
+    NSData *imageData = UIImageJPEGRepresentation(self.imgView_captured.image, 1.0);
+    if (imageData) {
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"image.jpg\"\r\n", @"image"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithString:@"Content-Type: image/jpeg\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:imageData];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // setting the body of the post to the reqeust
+    [urlReq setHTTPBody:body];
+    
+    // set the content-length
+    NSString *postLength = [NSString stringWithFormat:@"%d", [body length]];
+    [urlReq setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    
+
+    self.urlConn = [[NSURLConnection alloc] initWithRequest:urlReq delegate:self];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    self.alertObj = [[AlertView alloc] init];
+    
+    [self.loaderObj performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:NO];
+    [self.alertObj showStaticAlertWithTitle:@"" AndMessage:@"Error connecting to server.\nPlease try again later"];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response
+{
+    self.alertObj = [[AlertView alloc] init];
+    
+    [self.mutData setLength:0];
+    
+    if ([response statusCode] == 201)
+    {
+        self.success = 1;
+    }
+    else
+    {
+        self.success = 0;
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.mutData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    [self.loaderObj performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:NO];
+    
+    self.alertObj = [[AlertView alloc] init];
+    
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:self.mutData options:NSJSONReadingMutableLeaves error:nil];
+    
+    if (self.success == 0)
+    {
+        [self.alertObj showStaticAlertWithTitle:@"" AndMessage:[[dict valueForKeyPath:@"errors.image"] objectAtIndex:0]];
+    }
+    else
+    {
+        [self.alertObj showStaticAlertWithTitle:@"Success" AndMessage:@"Sendish Sent."];
+        [self.Btn_rotateCamera setTitle:@"Rotate" forState:UIControlStateNormal];
+        [self Action_rotateCamera:self];
+    }
+    
+    NSLog(@"%@",dict);
+}
 
 @end

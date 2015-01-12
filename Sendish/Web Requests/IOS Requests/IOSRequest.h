@@ -15,4 +15,6 @@
 
 +(void)postRequestForregister : (NSString *)url andParmas : (NSDictionary *)params success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure;
 
++(void)uploadData : (NSString *)url parameters:(NSDictionary *)dparameters imageData:(NSData *)dimageData  success: (void (^) (NSDictionary *responseStr))success failure: (void (^) (NSError *error))failure;
+
 @end

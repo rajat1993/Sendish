@@ -15,6 +15,8 @@
 #import "MainViewController.h"
 #import "UserAccount.h"
 #import "Base64.h"
+#import "UserModal.h"
+#import "UserProfileParser.h"
 #import <UIImageView+WebCache.h>
 
 @interface LoginViewController ()
@@ -34,12 +36,31 @@
 
 #pragma mark - Internal Methods
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     self.navigationController.navigationBarHidden = NO;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeRequestForUserData) name:@"login_with_facebook" object:nil];
+    
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
     
     [self setupView];
 }
@@ -99,6 +120,7 @@
 
 -(void)makeRequestForUserData
 {
+    [self.loaderObj performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:NO];
     [self setUpLoaderView];
     
     [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *FBuser, NSError *error) {
@@ -109,6 +131,9 @@
         else {
             NSString *userName = [FBuser name];
             NSString *userImageURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [FBuser objectID]];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:userImageURL forKey:@"user_pic"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
             
             [UserAccount sharedInstance].name = userName;
             [UserAccount sharedInstance].imageUrl = userImageURL;
@@ -228,6 +253,9 @@
 {
     self.alertObj = [[AlertView alloc] init];
     
+    AppDelegate *appDelObj = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    appDelObj.calledWithLogin = YES;
+
     if (FBSession.activeSession.state == FBSessionStateOpen
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
         
@@ -235,7 +263,7 @@
         
     } else {
 
-        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"email", @"basic_info"]
+        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"email"]
                                            allowLoginUI:YES
                                       completionHandler:
          ^(FBSession *session, FBSessionState state, NSError *error) {
@@ -347,9 +375,17 @@
 
         AppDelegate *appDelObj = (AppDelegate *)[UIApplication sharedApplication].delegate;
         
-//        [[NSUserDefaults standardUserDefaults] setObject:dict forKey:@"login_data"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-
+        [[NSUserDefaults standardUserDefaults] setObject:[[UserAccount sharedInstance] authToken] forKey:@"auth_token"];
+        [[NSUserDefaults standardUserDefaults] setObject:[[UserAccount sharedInstance] authHeader] forKey:@"auth_header"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        UserProfileParser *parser = [[UserProfileParser alloc] init];
+        
+        NSDictionary *loginDict = [parser parseUserData:dict];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:loginDict forKey:@"login_data"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         if ([[NSUserDefaults standardUserDefaults] valueForKey:@"first_login"] == nil)
         {
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"first_login"];
